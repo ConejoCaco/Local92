@@ -1,10 +1,13 @@
 import logo from "./img/spaceinvaders.gif";
 import "./App.css";
+import Componenteheader from "./componentes/Componenteheader";
 
 function App() {
   return (
     <div className="App">
+      <Componenteheader />
       <header className="App-header">
+        
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
