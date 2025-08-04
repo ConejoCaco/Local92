@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./img/spaceinvaders.gif";
+import "./App.css";
 
 function App() {
   return (
