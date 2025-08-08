@@ -1,0 +1,50 @@
+.grid-juegos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.card-juego {
+  width: 150px;
+  margin-right: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+}
+
+.juego-imagen {
+  width: 125px;
+  height: 154px;
+  background-color: #333;
+  margin: 0 auto 5px;
+  border: 1px solid #666;
+  flex-shrink: 0;
+}
+
+.juego-titulo {
+  font-family: "Play", sans-serif;
+  font-size: 0.6em;
+  font-weight: 400;
+  color: #fff;
+  margin: 2px 0 5px 0;
+  padding: 0 5px;
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+  flex-grow: 1;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.juego-precio {
+  font-family: "Play", sans-serif;
+  font-size: 0.65em;
+  font-weight: 700;
+  color: #f8a600;
+  margin-top: auto;
+  letter-spacing: 0.5px;
+  padding-bottom: 5px;
+}

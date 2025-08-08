@@ -1,0 +1,28 @@
+.catalogo-container {
+  width: 960px;
+  margin: 50px auto 0;
+  padding: 5px;
+}
+
+.catalogo-title {
+  font-family: "Play", sans-serif;
+  font-size: 0.9em;
+  font-weight: 700;
+  color: #f8a600;
+  margin: 5px 0 8px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #f8a600;
+  letter-spacing: 1px;
+}
+
+.contenedor-principal {
+  display: flex;
+}
+
+.columna-juegos {
+  width: 760px;
+}
+
+.columna-botones {
+  width: 200px;
+}
