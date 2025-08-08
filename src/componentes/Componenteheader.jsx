@@ -88,9 +88,6 @@ export default function Componenteheader() {
                   <li>
                     <a href="/Productos/PS5/Consolas">Consolas</a>
                   </li>
-                  <li>
-                    <a href="/Productos/PS5/Juegos">Clasificación por edad</a>
-                  </li>
                 </ul>
               </div>
             </div>
@@ -111,9 +108,6 @@ export default function Componenteheader() {
                   </li>
                   <li>
                     <a href="/Productos/PS5/Juegos">Consolas</a>
-                  </li>
-                  <li>
-                    <a href="/Productos/PS5/Juegos">Clasificacion por edad</a>
                   </li>
                 </ul>
               </div>
@@ -136,9 +130,6 @@ export default function Componenteheader() {
                   <li>
                     <a href="/Productos/PS5/Juegos">Consolas</a>
                   </li>
-                  <li>
-                    <a href="/Productos/PS5/Juegos">Clasificacion por edad</a>
-                  </li>
                 </ul>
               </div>
             </div>
@@ -159,9 +150,6 @@ export default function Componenteheader() {
                   </li>
                   <li>
                     <a href="/Productos/XONE/Juegos">Consolas</a>
-                  </li>
-                  <li>
-                    <a href="/Productos/XONE/Juegos">Clasificacion por edad</a>
                   </li>
                 </ul>
               </div>
@@ -184,9 +172,6 @@ export default function Componenteheader() {
                   <li>
                     <a href="/Productos/X360/Juegos">Consolas</a>
                   </li>
-                  <li>
-                    <a href="/Productos/X360/Juegos">Clasificacion por edad</a>
-                  </li>
                 </ul>
               </div>
             </div>
@@ -208,11 +193,6 @@ export default function Componenteheader() {
                   <li>
                     <a href="/Productos/SWITCH/Juegos">Consolas</a>
                   </li>
-                  <li>
-                    <a href="/Productos/SWITCH/Juegos">
-                      Clasificacion por edad
-                    </a>
-                  </li>
                 </ul>
               </div>
             </div>
@@ -233,11 +213,6 @@ export default function Componenteheader() {
                   </li>
                   <li>
                     <a href="/Productos/SWITCH2/Juegos">Consolas</a>
-                  </li>
-                  <li>
-                    <a href="/Productos/SWITCH2/Juegos">
-                      Clasificacion por edad
-                    </a>
                   </li>
                 </ul>
               </div>
