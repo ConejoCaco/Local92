@@ -3,13 +3,15 @@ import logo from "./img/spaceinvaders.gif";
 import "./App.css";
 import Componenteheader from "./componentes/Componenteheader";
 import Footer from "./componentes/Footer";
+import Componentedashboardlista from "./paginas/Componentedashboardlista";
 
 function App() {
   return (
     <>
-      <Componenteheader />
-      <main className="App">
+      <main className="App">      
         <header className="App-header">
+          
+          
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
