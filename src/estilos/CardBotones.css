@@ -1,5 +1,6 @@
 .card-botones {
   padding: 10px 0 0 10px;
+  margin-left: 30px;
 }
 
 .btn-categoria {
@@ -14,7 +15,7 @@
   font-weight: 700;
   text-align: left;
   padding: 6px 8px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.5px;

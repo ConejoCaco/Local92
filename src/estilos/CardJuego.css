@@ -1,31 +1,43 @@
 .grid-juegos {
   display: flex;
   flex-wrap: wrap;
-  gap: 0;
+  gap: 10px;
 }
 
 .card-juego {
-  width: 150px;
-  margin-right: 0;
-  margin-bottom: 15px;
+  width: 160px;
+  margin-bottom: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
   min-height: 250px;
+  background: #2a2a2a;
+  border-radius: 12 px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: 1px solid #3a3a3a;
+}
+
+.card-juego:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .juego-imagen {
-  width: 125px;
+  width: 122px;
   height: 154px;
   background-color: #333;
   margin: 0 auto 5px;
-  border: 1px solid #666;
+
   flex-shrink: 0;
+  background-color: #1e1e1e;
+  transition: all 0.3s ease;
 }
 
 .juego-titulo {
   font-family: "Play", sans-serif;
-  font-size: 0.6em;
+  font-size: 0.9em;
   font-weight: 400;
   color: #fff;
   margin: 2px 0 5px 0;
@@ -41,10 +53,19 @@
 
 .juego-precio {
   font-family: "Play", sans-serif;
-  font-size: 0.65em;
+  font-size: 1rem;
   font-weight: 700;
   color: #f8a600;
   margin-top: auto;
   letter-spacing: 0.5px;
   padding-bottom: 5px;
+}
+
+.juego-stock {
+  font-family: "Play", sans-serif;
+  font-size: 0.55em;
+  font-weight: 400;
+  color: #ccc;
+  margin-top: 2px;
+  letter-spacing: 0.3px;
 }

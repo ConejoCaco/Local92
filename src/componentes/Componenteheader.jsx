@@ -1,14 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import "../estilos/Componenteheader.css";
 import { Search, User, ShoppingCart } from "lucide-react";
 
-export default function Componenteheader() {
+export default function Componenteheader({ onNavegar }) {
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
+  const handleNavegacion = (e, consola, categoria) => {
+    e.preventDefault();
+    onNavegar("catalogo", consola, categoria);
+    setActiveDropdown(null);
+  };
+
+  const toggleDropdown = (e, consola) => {
+    e.preventDefault();
+    setActiveDropdown(activeDropdown === consola ? null : consola);
+  };
+
+  const irAlInicio = (e) => {
+    e.preventDefault();
+    onNavegar("inicio");
+    setActiveDropdown(null);
+  };
+
   return (
     <div className="contenedor">
       <div id="nav">
-        {/* Logo de la pag */}
+        {/* Logo */}
         <div className="logo">
-          <a>
+          <a href="#" onClick={irAlInicio} style={{ cursor: "pointer" }}>
             <img
               src="/img/pixil-frame-0.png"
               alt="Logo Local92"
@@ -75,168 +94,320 @@ export default function Componenteheader() {
         {/* Menu Despegable */}
         <ul id="menu" className="productos">
           <li>
-            <a href="/PS5/home.asp">PS5</a>
+            <a
+              href="#"
+              onClick={irAlInicio}
+              style={{ color: "#fff", textDecoration: "none" }}
+            >
+              Inicio
+            </a>
+          </li>
+          {/* PS5 */}
+          <li className={activeDropdown === "PS5" ? "active" : ""}>
+            <a href="#" onClick={(e) => toggleDropdown(e, "PS5")}>
+              PS5
+            </a>
             <div className="dropdown ps5">
               <div className="col_1">
                 <ul>
                   <li>
-                    <a href="/paginas/PS5.jsx">Juegos</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "PS5", "juegos")}
+                    >
+                      Juegos
+                    </a>
                   </li>
                   <li>
-                    <a href="/Productos/PS5/Juegos">Accesorios</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "PS5", "accesorios")}
+                    >
+                      Accesorios
+                    </a>
                   </li>
                   <li>
-                    <a href="/Productos/PS5/Consolas">Consolas</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "PS5", "consolas")}
+                    >
+                      Consolas
+                    </a>
                   </li>
                 </ul>
               </div>
             </div>
           </li>
 
-          <li>
-            <a href="/PS4/home.asp" className="drop">
+          {/* PS4 */}
+          <li className={activeDropdown === "PS4" ? "active" : ""}>
+            <a href="#" onClick={(e) => toggleDropdown(e, "PS4")}>
               PS4
             </a>
             <div className="dropdown ps4">
               <div className="col_1">
                 <ul>
                   <li>
-                    <a href="/Productos/PS5/Juegos">Juegos</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "PS4", "juegos")}
+                    >
+                      Juegos
+                    </a>
                   </li>
                   <li>
-                    <a href="/Productos/PS5/Juegos">Accesorios</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "PS4", "accesorios")}
+                    >
+                      Accesorios
+                    </a>
                   </li>
                   <li>
-                    <a href="/Productos/PS5/Juegos">Consolas</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "PS4", "consolas")}
+                    >
+                      Consolas
+                    </a>
                   </li>
                 </ul>
               </div>
             </div>
           </li>
 
-          <li>
-            <a href="/PS3/home.asp" className="drop">
+          {/* PS3 */}
+          <li className={activeDropdown === "PS3" ? "active" : ""}>
+            <a href="#" onClick={(e) => toggleDropdown(e, "PS3")}>
               PS3
             </a>
             <div className="dropdown ps3">
               <div className="col_1">
                 <ul>
                   <li>
-                    <a href="/Productos/PS5/Juegos">Juegos</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "PS3", "juegos")}
+                    >
+                      Juegos
+                    </a>
                   </li>
                   <li>
-                    <a href="/Productos/PS5/Juegos">Accesorios</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "PS3", "accesorios")}
+                    >
+                      Accesorios
+                    </a>
                   </li>
                   <li>
-                    <a href="/Productos/PS5/Juegos">Consolas</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "PS3", "consolas")}
+                    >
+                      Consolas
+                    </a>
                   </li>
                 </ul>
               </div>
             </div>
           </li>
 
-          <li>
-            <a href="/XONE/home.asp" className="drop">
+          {/* XBOX ONE */}
+          <li className={activeDropdown === "XONE" ? "active" : ""}>
+            <a href="#" onClick={(e) => toggleDropdown(e, "XONE")}>
               X ONE
             </a>
             <div className="dropdown xboxone">
               <div className="col_1">
                 <ul>
                   <li>
-                    <a href="/Productos/XONE/Juegos">Juegos</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "XONE", "juegos")}
+                    >
+                      Juegos
+                    </a>
                   </li>
                   <li>
-                    <a href="/Productos/XONE/Juegos">Accesorios</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "XONE", "accesorios")}
+                    >
+                      Accesorios
+                    </a>
                   </li>
                   <li>
-                    <a href="/Productos/XONE/Juegos">Consolas</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "XONE", "consolas")}
+                    >
+                      Consolas
+                    </a>
                   </li>
                 </ul>
               </div>
             </div>
           </li>
 
-          <li>
-            <a href="/X360/home.asp" className="drop">
+          {/* XBOX 360 */}
+          <li className={activeDropdown === "X360" ? "active" : ""}>
+            <a href="#" onClick={(e) => toggleDropdown(e, "X360")}>
               XBOX 360
             </a>
             <div className="dropdown xbox360">
               <div className="col_1">
                 <ul>
                   <li>
-                    <a href="/Productos/X360/Juegos">Juegos</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "X360", "juegos")}
+                    >
+                      Juegos
+                    </a>
                   </li>
                   <li>
-                    <a href="/Productos/X360/Juegos">Accesorios</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "X360", "accesorios")}
+                    >
+                      Accesorios
+                    </a>
                   </li>
                   <li>
-                    <a href="/Productos/X360/Juegos">Consolas</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "X360", "consolas")}
+                    >
+                      Consolas
+                    </a>
                   </li>
                 </ul>
               </div>
             </div>
           </li>
 
-          <li>
-            <a href="/Switch/home.asp" className="drop">
+          {/* SWITCH */}
+          <li className={activeDropdown === "SWITCH" ? "active" : ""}>
+            <a href="#" onClick={(e) => toggleDropdown(e, "SWITCH")}>
               SWITCH
             </a>
             <div className="dropdown switch">
               <div className="col_1">
                 <ul>
                   <li>
-                    <a href="/Productos/SWITCH/Juegos">Juegos</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "SWITCH", "juegos")}
+                    >
+                      Juegos
+                    </a>
                   </li>
                   <li>
-                    <a href="/Productos/SWITCH/Juegos">Accesorios</a>
+                    <a
+                      href="#"
+                      onClick={(e) =>
+                        handleNavegacion(e, "SWITCH", "accesorios")
+                      }
+                    >
+                      Accesorios
+                    </a>
                   </li>
                   <li>
-                    <a href="/Productos/SWITCH/Juegos">Consolas</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "SWITCH", "consolas")}
+                    >
+                      Consolas
+                    </a>
                   </li>
                 </ul>
               </div>
             </div>
           </li>
 
-          <li>
-            <a href="/Switch2/home.asp" className="drop">
+          {/* SWITCH 2 */}
+          <li className={activeDropdown === "SWITCH2" ? "active" : ""}>
+            <a href="#" onClick={(e) => toggleDropdown(e, "SWITCH2")}>
               SWITCH 2
             </a>
             <div className="dropdown switch2">
               <div className="col_1">
                 <ul>
                   <li>
-                    <a href="/Productos/SWITCH2/Juegos">Juegos</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "SWITCH2", "juegos")}
+                    >
+                      Juegos
+                    </a>
                   </li>
                   <li>
-                    <a href="/Productos/SWITCH2/Juegos">Accesorios</a>
+                    <a
+                      href="#"
+                      onClick={(e) =>
+                        handleNavegacion(e, "SWITCH2", "accesorios")
+                      }
+                    >
+                      Accesorios
+                    </a>
                   </li>
                   <li>
-                    <a href="/Productos/SWITCH2/Juegos">Consolas</a>
+                    <a
+                      href="#"
+                      onClick={(e) =>
+                        handleNavegacion(e, "SWITCH2", "consolas")
+                      }
+                    >
+                      Consolas
+                    </a>
                   </li>
                 </ul>
               </div>
             </div>
           </li>
 
-          <li>
-            <a href="/otros/home.asp" className="drop">
+          {/* Otros */}
+          <li className={activeDropdown === "OTROS" ? "active" : ""}>
+            <a href="#" onClick={(e) => toggleDropdown(e, "OTROS")}>
               Otros
             </a>
             <div className="dropdown otros">
               <div className="col_1">
                 <ul>
                   <li>
-                    <a href="/Productos/Otros/Accesorios">Accesorios</a>
+                    <a
+                      href="#"
+                      onClick={(e) =>
+                        handleNavegacion(e, "OTROS", "accesorios")
+                      }
+                    >
+                      Accesorios
+                    </a>
                   </li>
                   <li>
-                    <a href="/Productos/Otros/Mandos">Mandos</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "OTROS", "mandos")}
+                    >
+                      Mandos
+                    </a>
                   </li>
                   <li>
-                    <a href="/Productos/Otros/Consolas">Consolas</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "OTROS", "consolas")}
+                    >
+                      Consolas
+                    </a>
                   </li>
                   <li>
-                    <a href="/Productos/Otros/Varios">Otros</a>
+                    <a
+                      href="#"
+                      onClick={(e) => handleNavegacion(e, "OTROS", "otros")}
+                    >
+                      Otros
+                    </a>
                   </li>
                 </ul>
               </div>

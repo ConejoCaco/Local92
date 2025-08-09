@@ -155,9 +155,9 @@ body {
 
 .dropdown {
   position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  top: -10%;
+  left: 0;
+  transform: none;
   z-index: 9999;
   min-width: 180px;
   background: #ffffff;
@@ -166,10 +166,6 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   display: none;
   padding: 12px;
-}
-
-.dropdown.otros {
-  transform: translateX(-50%) translateY(-40%) !important;
 }
 
 #menu.productos li:hover .dropdown {
