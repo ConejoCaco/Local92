@@ -6,6 +6,7 @@ import Body from "./componentes/Body";
 import Componentecatalogo from "./componentes/Componentecatalogo";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 function App() {
   const [paginaActual, setPaginaActual] = useState({
     seccion: "inicio",
@@ -29,6 +30,7 @@ function App() {
         consola={paginaActual.consola}
         categoria={paginaActual.categoria}
       />
+      
       <Footer />
     </>
   );

@@ -1,18 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 
 .pixel-card {
-  background-color:#F8A600 !important;
+  background-color:#fffaf0 !important;
   border: 3px solid #333 !important; 
   border-radius: 25px !important; 
-  font-family: 'press start 2p', cursive !important;
-  font-size: 16px !important; 
+  /*font-family: 'press start 2p', cursive !important;*/
+  font-size: 20px !important;
+  font-weight: bold;
+  font-family: "Play", sans-serif ;
 }
 label{
-  color:#333 !important;
+  color: #1e3a5f !important; ;
 }
 
+
 .pixel-card h2 {
-  color: #333;
+  color: #1e3a5f; 
+  
   
 }
 
@@ -22,11 +27,11 @@ label{
   border: 3px solid #333;
   border-radius: 0;
   background-color: #fff8dc; 
-  font-size: 14px;
+  font-size: bold;
 }
 
 .pixel-card button {
-  background-color: #333;
+  background-color: #1e3a5f;
   color: white;
   border: 3px solid #333;
   border-radius: 0;
@@ -35,11 +40,11 @@ label{
 }
 
 .pixel-card button:hover {
-  background-color: #d4a017;
+  background-color: #fff5e1;
   color: #000;
 }
 .pixel-card button:active {
   background-color: #a67c00;
   border-color: #a67c00;
-  color: #fff;
+  color: #fffaf0;
 }
