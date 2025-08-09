@@ -4,7 +4,6 @@ import "../estilos/CatalogoCompleto.css";
 
 export default function CatalogoCompleto({ consola, categoria }) {
   const obtenerTitulo = () => {
-    // Mapeo de nombres de consola para mostrar nombres completos
     const nombresConsola = {
       XONE: "XBOX ONE",
       X360: "XBOX 360",
@@ -12,10 +11,7 @@ export default function CatalogoCompleto({ consola, categoria }) {
       PS5: "PLAYSTATION 5",
       PS3: "PLAYSTATION 3",
       NSW: "NINTENDO SWITCH",
-      WII: "NINTENDO WII",
-      WIIU: "NINTENDO WII U",
-      N3DS: "NINTENDO 3DS",
-      PC: "PC",
+      NSW2: "NINTENDO SWITCH 2",
     };
 
     const consolaFormateada =

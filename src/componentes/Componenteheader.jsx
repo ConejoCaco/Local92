@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import "../estilos/Componenteheader.css";
-import { Search, User, ShoppingCart } from "lucide-react";
 
 export default function Componenteheader({ onNavegar }) {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
-  const handleNavegacion = (e, consola, categoria) => {
-    e.preventDefault();
+  const handleNavegacion = (consola, categoria) => {
     onNavegar("catalogo", consola, categoria);
     setActiveDropdown(null);
   };
@@ -25,19 +23,16 @@ export default function Componenteheader({ onNavegar }) {
   return (
     <div className="contenedor">
       <div id="nav">
-        {/* Logo */}
         <div className="logo">
           <a href="#" onClick={irAlInicio} style={{ cursor: "pointer" }}>
             <img
               src="/img/pixil-frame-0.png"
-              alt="Logo Local92"
-              title="Local92"
+              alt="Logo"
               style={{ marginTop: "3px", height: "70px", width: "auto" }}
             />
           </a>
         </div>
 
-        {/* Buscador */}
         <div className="buscadorTop">
           <input
             name="consulta"
@@ -48,13 +43,8 @@ export default function Componenteheader({ onNavegar }) {
             className="inputBuscador"
             placeholder="Buscar..."
           />
-          <div
-            id="resultadoBuscadorTopProductos"
-            className="resultadosBuscador"
-          ></div>
         </div>
 
-        {/* Redes Sociales */}
         <div className="social" style={{ minWidth: "600px" }}>
           <ul>
             <li>
@@ -91,7 +81,6 @@ export default function Componenteheader({ onNavegar }) {
           </div>
         </div>
 
-        {/* Menu Despegable */}
         <ul id="menu" className="productos">
           <li>
             <a
@@ -102,7 +91,7 @@ export default function Componenteheader({ onNavegar }) {
               Inicio
             </a>
           </li>
-          {/* PS5 */}
+
           <li className={activeDropdown === "PS5" ? "active" : ""}>
             <a href="#" onClick={(e) => toggleDropdown(e, "PS5")}>
               PS5
@@ -113,7 +102,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "PS5", "juegos")}
+                      onClick={() => handleNavegacion("PS5", "juegos")}
                     >
                       Juegos
                     </a>
@@ -121,7 +110,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "PS5", "accesorios")}
+                      onClick={() => handleNavegacion("PS5", "accesorios")}
                     >
                       Accesorios
                     </a>
@@ -129,7 +118,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "PS5", "consolas")}
+                      onClick={() => handleNavegacion("PS5", "consolas")}
                     >
                       Consolas
                     </a>
@@ -139,7 +128,6 @@ export default function Componenteheader({ onNavegar }) {
             </div>
           </li>
 
-          {/* PS4 */}
           <li className={activeDropdown === "PS4" ? "active" : ""}>
             <a href="#" onClick={(e) => toggleDropdown(e, "PS4")}>
               PS4
@@ -150,7 +138,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "PS4", "juegos")}
+                      onClick={() => handleNavegacion("PS4", "juegos")}
                     >
                       Juegos
                     </a>
@@ -158,7 +146,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "PS4", "accesorios")}
+                      onClick={() => handleNavegacion("PS4", "accesorios")}
                     >
                       Accesorios
                     </a>
@@ -166,7 +154,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "PS4", "consolas")}
+                      onClick={() => handleNavegacion("PS4", "consolas")}
                     >
                       Consolas
                     </a>
@@ -176,7 +164,6 @@ export default function Componenteheader({ onNavegar }) {
             </div>
           </li>
 
-          {/* PS3 */}
           <li className={activeDropdown === "PS3" ? "active" : ""}>
             <a href="#" onClick={(e) => toggleDropdown(e, "PS3")}>
               PS3
@@ -187,7 +174,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "PS3", "juegos")}
+                      onClick={() => handleNavegacion("PS3", "juegos")}
                     >
                       Juegos
                     </a>
@@ -195,7 +182,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "PS3", "accesorios")}
+                      onClick={() => handleNavegacion("PS3", "accesorios")}
                     >
                       Accesorios
                     </a>
@@ -203,7 +190,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "PS3", "consolas")}
+                      onClick={() => handleNavegacion("PS3", "consolas")}
                     >
                       Consolas
                     </a>
@@ -213,7 +200,6 @@ export default function Componenteheader({ onNavegar }) {
             </div>
           </li>
 
-          {/* XBOX ONE */}
           <li className={activeDropdown === "XONE" ? "active" : ""}>
             <a href="#" onClick={(e) => toggleDropdown(e, "XONE")}>
               X ONE
@@ -224,7 +210,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "XONE", "juegos")}
+                      onClick={() => handleNavegacion("XONE", "juegos")}
                     >
                       Juegos
                     </a>
@@ -232,7 +218,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "XONE", "accesorios")}
+                      onClick={() => handleNavegacion("XONE", "accesorios")}
                     >
                       Accesorios
                     </a>
@@ -240,7 +226,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "XONE", "consolas")}
+                      onClick={() => handleNavegacion("XONE", "consolas")}
                     >
                       Consolas
                     </a>
@@ -250,7 +236,6 @@ export default function Componenteheader({ onNavegar }) {
             </div>
           </li>
 
-          {/* XBOX 360 */}
           <li className={activeDropdown === "X360" ? "active" : ""}>
             <a href="#" onClick={(e) => toggleDropdown(e, "X360")}>
               XBOX 360
@@ -261,7 +246,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "X360", "juegos")}
+                      onClick={() => handleNavegacion("X360", "juegos")}
                     >
                       Juegos
                     </a>
@@ -269,7 +254,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "X360", "accesorios")}
+                      onClick={() => handleNavegacion("X360", "accesorios")}
                     >
                       Accesorios
                     </a>
@@ -277,7 +262,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "X360", "consolas")}
+                      onClick={() => handleNavegacion("X360", "consolas")}
                     >
                       Consolas
                     </a>
@@ -287,7 +272,6 @@ export default function Componenteheader({ onNavegar }) {
             </div>
           </li>
 
-          {/* SWITCH */}
           <li className={activeDropdown === "SWITCH" ? "active" : ""}>
             <a href="#" onClick={(e) => toggleDropdown(e, "SWITCH")}>
               SWITCH
@@ -298,7 +282,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "SWITCH", "juegos")}
+                      onClick={() => handleNavegacion("SWITCH", "juegos")}
                     >
                       Juegos
                     </a>
@@ -306,9 +290,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) =>
-                        handleNavegacion(e, "SWITCH", "accesorios")
-                      }
+                      onClick={() => handleNavegacion("SWITCH", "accesorios")}
                     >
                       Accesorios
                     </a>
@@ -316,7 +298,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "SWITCH", "consolas")}
+                      onClick={() => handleNavegacion("SWITCH", "consolas")}
                     >
                       Consolas
                     </a>
@@ -326,7 +308,6 @@ export default function Componenteheader({ onNavegar }) {
             </div>
           </li>
 
-          {/* SWITCH 2 */}
           <li className={activeDropdown === "SWITCH2" ? "active" : ""}>
             <a href="#" onClick={(e) => toggleDropdown(e, "SWITCH2")}>
               SWITCH 2
@@ -337,7 +318,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "SWITCH2", "juegos")}
+                      onClick={() => handleNavegacion("SWITCH2", "juegos")}
                     >
                       Juegos
                     </a>
@@ -345,9 +326,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) =>
-                        handleNavegacion(e, "SWITCH2", "accesorios")
-                      }
+                      onClick={() => handleNavegacion("SWITCH2", "accesorios")}
                     >
                       Accesorios
                     </a>
@@ -355,9 +334,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) =>
-                        handleNavegacion(e, "SWITCH2", "consolas")
-                      }
+                      onClick={() => handleNavegacion("SWITCH2", "consolas")}
                     >
                       Consolas
                     </a>
@@ -367,7 +344,6 @@ export default function Componenteheader({ onNavegar }) {
             </div>
           </li>
 
-          {/* Otros */}
           <li className={activeDropdown === "OTROS" ? "active" : ""}>
             <a href="#" onClick={(e) => toggleDropdown(e, "OTROS")}>
               Otros
@@ -378,9 +354,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) =>
-                        handleNavegacion(e, "OTROS", "accesorios")
-                      }
+                      onClick={() => handleNavegacion("OTROS", "accesorios")}
                     >
                       Accesorios
                     </a>
@@ -388,7 +362,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "OTROS", "mandos")}
+                      onClick={() => handleNavegacion("OTROS", "mandos")}
                     >
                       Mandos
                     </a>
@@ -396,7 +370,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "OTROS", "consolas")}
+                      onClick={() => handleNavegacion("OTROS", "consolas")}
                     >
                       Consolas
                     </a>
@@ -404,7 +378,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "OTROS", "otros")}
+                      onClick={() => handleNavegacion("OTROS", "otros")}
                     >
                       Otros
                     </a>

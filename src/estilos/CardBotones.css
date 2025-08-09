@@ -1,22 +1,30 @@
-.card-botones {
-  padding: 10px 0 0 10px;
-  margin-left: 30px;
+.card-botones-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
 }
 
-.btn-categoria {
-  display: block;
+.boton-categoria {
   width: 100%;
-  background: none;
-  border: none;
-  border-left: 3px solid #f8a600;
+  padding: 10px 15px;
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
   color: #f8a600;
   font-family: "Play", sans-serif;
-  font-size: 0.55em;
-  font-weight: 700;
-  text-align: left;
-  padding: 6px 8px;
-  margin-bottom: 10px;
-  cursor: pointer;
+  font-size: 0.7em;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.boton-categoria:hover {
+  transform: translateY(-3px);
+  background: #333;
+  color: #fff;
 }

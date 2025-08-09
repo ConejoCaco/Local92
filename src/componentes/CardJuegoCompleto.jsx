@@ -2,10 +2,10 @@ import React from "react";
 import juegosPs5 from "../juegos/juegosPs5";
 import juegosPs4 from "../juegos/juegosPs4";
 import juegosPs3 from "../juegos/juegosPs3";
-import juegosXboxOne from "../juegos/juegosXone";
-import juegosXbox360 from "../juegos/juegosX360";
+import juegosXone from "../juegos/juegosXone";
+import juegosX360 from "../juegos/juegosX360";
 import juegosSwitch from "../juegos/juegosSwitch";
-
+import juegosSwitch2 from "../juegos/juegosSwitch2";
 import accesoriosPs5 from "../accesorios/accesoriosPs5";
 import accesoriosPs4 from "../accesorios/accesoriosPs4";
 
@@ -43,35 +43,35 @@ export default function CardJuegoCompleto({
         return [];
 
       case "XONE_juegos":
-        return [];
+        return juegosXone;
       case "XONE_accesorios":
         return [];
       case "XONE_consolas":
         return [];
 
       case "X360_juegos":
-        return [];
+        return juegosX360;
       case "X360_accesorios":
         return [];
       case "X360_consolas":
         return [];
 
       case "SWITCH_juegos":
-        return [];
+        return juegosSwitch;
       case "SWITCH_accesorios":
         return [];
       case "SWITCH_consolas":
         return [];
 
       case "SWITCH2_juegos":
-        return [];
+        return juegosSwitch2;
       case "SWITCH2_accesorios":
         return [];
       case "SWITCH2_consolas":
         return [];
 
       case "OTROS_accesorios":
-        return [];
+        return accesoriosPs4, accesoriosPs5;
       case "OTROS_mandos":
         return [];
       case "OTROS_consolas":
@@ -143,7 +143,10 @@ export default function CardJuegoCompleto({
                 <div className="precio-compact">
                   ${item.precio.toLocaleString()}
                 </div>
-                <button className="btn-comprar-compact">+ CARRITO</button>
+                <button className="btn-comprar-compact">
+                  {" "}
+                  AGREGAR AL CARRITO
+                </button>
               </div>
             </div>
           </div>
