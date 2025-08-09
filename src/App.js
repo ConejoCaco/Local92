@@ -24,6 +24,7 @@ function App() {
   return (
     <>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <main className="App">      
         <header className="App-header">
           <Componentecatalogo titulo="PlayStation 5" />
@@ -42,12 +43,17 @@ function App() {
         </header>
       </main>
 =======
+=======
+>>>>>>> Stashed changes
       <Componenteheader onNavegar={cambiarPagina} />
       <Body
         paginaActual={paginaActual.seccion}
         consola={paginaActual.consola}
         categoria={paginaActual.categoria}
       />
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       <Footer />
     </>
