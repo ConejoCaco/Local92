@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import HeaderAdmin from "./HeaderAdmin";
 import Componenteformaddjuegos from "./Componenteformaddjuegos";
 import Componenteformaddproducto from "./Componenteformaddproducto";
 import Dashboardlistadoproductos from "./Dashboardlistadoproductos";
@@ -9,6 +11,8 @@ export default function ComponentepanelLogin() {
   const [usuario, setUsuario] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [opcion, setOpcion] = useState("addJuegos");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,14 +24,38 @@ export default function ComponentepanelLogin() {
     }
   };
 
+  const cerrarSesion = () => {
+    setAutenticado(false);
+    setUsuario("");
+    setPassword("");
+    setOpcion("addJuegos");
+    navigate("/");
+  };
+
+
   if (autenticado) {
+    let contenido;
+    switch (opcion) {
+      case "addJuegos":
+        contenido = <Componenteformaddjuegos />;
+        break;
+      case "addProducto":
+        contenido = <Componenteformaddproducto />;
+        break;
+      case "stock":
+        contenido = <Dashboardlistadoproductos tipo="Stock" />;
+        break;
+      case "pedidos":
+        contenido = <Dashboardlistadoproductos tipo="Pedidos" />;
+        break;
+      default:
+        contenido = <Componenteformaddjuegos />;
+    }
+
     return (
-      <div className="contenedor-temporal">
-        
-        <Componenteformaddjuegos />
-        <Componenteformaddproducto />
-        <Dashboardlistadoproductos tipo="Stock" />
-        <Dashboardlistadoproductos tipo="Pedidos" />
+      <div>
+        <HeaderAdmin onSeleccion={setOpcion}  onCerrarSesion={cerrarSesion}/>
+        <div className="admin-content">{contenido}</div>
       </div>
     );
   }

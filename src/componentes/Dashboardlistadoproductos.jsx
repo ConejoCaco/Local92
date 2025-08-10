@@ -62,7 +62,7 @@ export default function Dashboardlistadoproductos({ tipo }) {
     <div className='container d-flex justify-content-center align-items-center container-dashboard'>
       <div className='dashboard-container'>
         <h2 className='text-center mb-4'>
-          {tipo === 'Stock' ? 'Lista de Juegos PS5' : 'Lista de Pedidos'}
+          {tipo === 'Stock' ? 'Stock de juegos' : 'Lista de Pedidos'}
         </h2>
         <div className='lista-pedidos'>
           {items.map(renderItem)}
