@@ -7,6 +7,7 @@ import Componentecatalogo from "./componentes/Componentecatalogo";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
+
 function App() {
   const [paginaActual, setPaginaActual] = useState({
     seccion: "inicio",

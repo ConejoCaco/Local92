@@ -1,6 +1,7 @@
 import React from "react";
 import ComponenteCatalogo from "./Componentecatalogo";
 import CatalogoCompleto from "./CatalogoCompleto";
+import ComponentePanelLogin from "./ComponentepanelLogin";
 import "../estilos/Body.css";
 
 export default function Body({ paginaActual, consola, categoria }) {
@@ -18,6 +19,10 @@ export default function Body({ paginaActual, consola, categoria }) {
           <section className="seccion-catalogo">
             <CatalogoCompleto consola={consola} categoria={categoria} />
           </section>
+        );
+      case "login":
+        return (
+          <ComponentePanelLogin />
         );
 
       default:

@@ -5,11 +5,21 @@ import { Search, User, ShoppingCart } from "lucide-react";
 export default function Componenteheader({ onNavegar }) {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
-  const handleNavegacion = (e, consola, categoria) => {
+  /*const handleNavegacion = (e, consola, categoria) => {
     e.preventDefault();
     onNavegar("catalogo", consola, categoria);
     setActiveDropdown(null);
-  };
+  };*/
+
+  const handleNavegacion = (e, consola, categoria) => {
+  e.preventDefault();
+  if (consola === "login") {
+    onNavegar("login");
+  } else {
+    onNavegar("catalogo", consola, categoria);
+  }
+  setActiveDropdown(null);
+};
 
   const toggleDropdown = (e, consola) => {
     e.preventDefault();
@@ -404,7 +414,8 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={(e) => handleNavegacion(e, "OTROS", "otros")}
+                      /*onClick={(e) => handleNavegacion(e, "OTROS", "otros")}*/
+                      onClick={(e) => handleNavegacion(e,"login")}
                     >
                       Otros
                     </a>
