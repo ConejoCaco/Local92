@@ -48,6 +48,7 @@ const juegosPs3 = [
     stock: 7,
     imagen: "rdr.jpg",
   },
+<<<<<<< Updated upstream
   {
     id: 8,
     titulo: "Batman: Arkham City",
@@ -127,6 +128,8 @@ const juegosPs3 = [
     stock: 8,
     imagen: "resistance3.jpg",
   },
+=======
+>>>>>>> Stashed changes
 ];
 
 export default juegosPs3;

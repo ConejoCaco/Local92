@@ -4,11 +4,17 @@ import "../estilos/Componenteheader.css";
 export default function Componenteheader({ onNavegar }) {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
+<<<<<<< Updated upstream
   const handleNavegacion = (consola, categoria) => {
+=======
+  const handleNavegacion = (e, consola, categoria) => {
+    e.preventDefault();
+>>>>>>> Stashed changes
     onNavegar("catalogo", consola, categoria);
     setActiveDropdown(null);
   };
 
+<<<<<<< Updated upstream
   /*const handleNavegacion = (e, consola, categoria) => {
   e.preventDefault();
   if (consola === "login") {
@@ -19,6 +25,8 @@ export default function Componenteheader({ onNavegar }) {
   setActiveDropdown(null);
 };*/
 
+=======
+>>>>>>> Stashed changes
   const toggleDropdown = (e, consola) => {
     e.preventDefault();
     setActiveDropdown(activeDropdown === consola ? null : consola);
@@ -33,6 +41,10 @@ export default function Componenteheader({ onNavegar }) {
   return (
     <div className="contenedor">
       <div id="nav">
+<<<<<<< Updated upstream
+=======
+        {/* Logo */}
+>>>>>>> Stashed changes
         <div className="logo">
           <a href="#" onClick={irAlInicio} style={{ cursor: "pointer" }}>
             <img
@@ -101,7 +113,11 @@ export default function Componenteheader({ onNavegar }) {
               Inicio
             </a>
           </li>
+<<<<<<< Updated upstream
 
+=======
+          {/* PS5 */}
+>>>>>>> Stashed changes
           <li className={activeDropdown === "PS5" ? "active" : ""}>
             <a href="#" onClick={(e) => toggleDropdown(e, "PS5")}>
               PS5
@@ -112,7 +128,11 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("PS5", "juegos")}
+=======
+                      onClick={(e) => handleNavegacion(e, "PS5", "juegos")}
+>>>>>>> Stashed changes
                     >
                       Juegos
                     </a>
@@ -120,7 +140,11 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("PS5", "accesorios")}
+=======
+                      onClick={(e) => handleNavegacion(e, "PS5", "accesorios")}
+>>>>>>> Stashed changes
                     >
                       Accesorios
                     </a>
@@ -128,7 +152,11 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("PS5", "consolas")}
+=======
+                      onClick={(e) => handleNavegacion(e, "PS5", "consolas")}
+>>>>>>> Stashed changes
                     >
                       Consolas
                     </a>
@@ -138,6 +166,10 @@ export default function Componenteheader({ onNavegar }) {
             </div>
           </li>
 
+<<<<<<< Updated upstream
+=======
+          {/* PS4 */}
+>>>>>>> Stashed changes
           <li className={activeDropdown === "PS4" ? "active" : ""}>
             <a href="#" onClick={(e) => toggleDropdown(e, "PS4")}>
               PS4
@@ -148,7 +180,11 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("PS4", "juegos")}
+=======
+                      onClick={(e) => handleNavegacion(e, "PS4", "juegos")}
+>>>>>>> Stashed changes
                     >
                       Juegos
                     </a>
@@ -156,7 +192,11 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("PS4", "accesorios")}
+=======
+                      onClick={(e) => handleNavegacion(e, "PS4", "accesorios")}
+>>>>>>> Stashed changes
                     >
                       Accesorios
                     </a>
@@ -164,7 +204,11 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("PS4", "consolas")}
+=======
+                      onClick={(e) => handleNavegacion(e, "PS4", "consolas")}
+>>>>>>> Stashed changes
                     >
                       Consolas
                     </a>
@@ -174,6 +218,10 @@ export default function Componenteheader({ onNavegar }) {
             </div>
           </li>
 
+<<<<<<< Updated upstream
+=======
+          {/* PS3 */}
+>>>>>>> Stashed changes
           <li className={activeDropdown === "PS3" ? "active" : ""}>
             <a href="#" onClick={(e) => toggleDropdown(e, "PS3")}>
               PS3
@@ -184,7 +232,11 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("PS3", "juegos")}
+=======
+                      onClick={(e) => handleNavegacion(e, "PS3", "juegos")}
+>>>>>>> Stashed changes
                     >
                       Juegos
                     </a>
@@ -192,7 +244,11 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("PS3", "accesorios")}
+=======
+                      onClick={(e) => handleNavegacion(e, "PS3", "accesorios")}
+>>>>>>> Stashed changes
                     >
                       Accesorios
                     </a>
@@ -200,7 +256,11 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("PS3", "consolas")}
+=======
+                      onClick={(e) => handleNavegacion(e, "PS3", "consolas")}
+>>>>>>> Stashed changes
                     >
                       Consolas
                     </a>
@@ -210,6 +270,10 @@ export default function Componenteheader({ onNavegar }) {
             </div>
           </li>
 
+<<<<<<< Updated upstream
+=======
+          {/* XBOX ONE */}
+>>>>>>> Stashed changes
           <li className={activeDropdown === "XONE" ? "active" : ""}>
             <a href="#" onClick={(e) => toggleDropdown(e, "XONE")}>
               X ONE
@@ -220,7 +284,11 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("XONE", "juegos")}
+=======
+                      onClick={(e) => handleNavegacion(e, "XONE", "juegos")}
+>>>>>>> Stashed changes
                     >
                       Juegos
                     </a>
@@ -228,7 +296,11 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("XONE", "accesorios")}
+=======
+                      onClick={(e) => handleNavegacion(e, "XONE", "accesorios")}
+>>>>>>> Stashed changes
                     >
                       Accesorios
                     </a>
@@ -236,7 +308,11 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("XONE", "consolas")}
+=======
+                      onClick={(e) => handleNavegacion(e, "XONE", "consolas")}
+>>>>>>> Stashed changes
                     >
                       Consolas
                     </a>
@@ -246,6 +322,10 @@ export default function Componenteheader({ onNavegar }) {
             </div>
           </li>
 
+<<<<<<< Updated upstream
+=======
+          {/* XBOX 360 */}
+>>>>>>> Stashed changes
           <li className={activeDropdown === "X360" ? "active" : ""}>
             <a href="#" onClick={(e) => toggleDropdown(e, "X360")}>
               XBOX 360
@@ -256,7 +336,11 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("X360", "juegos")}
+=======
+                      onClick={(e) => handleNavegacion(e, "X360", "juegos")}
+>>>>>>> Stashed changes
                     >
                       Juegos
                     </a>
@@ -264,7 +348,11 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("X360", "accesorios")}
+=======
+                      onClick={(e) => handleNavegacion(e, "X360", "accesorios")}
+>>>>>>> Stashed changes
                     >
                       Accesorios
                     </a>
@@ -272,7 +360,11 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("X360", "consolas")}
+=======
+                      onClick={(e) => handleNavegacion(e, "X360", "consolas")}
+>>>>>>> Stashed changes
                     >
                       Consolas
                     </a>
@@ -282,6 +374,10 @@ export default function Componenteheader({ onNavegar }) {
             </div>
           </li>
 
+<<<<<<< Updated upstream
+=======
+          {/* SWITCH */}
+>>>>>>> Stashed changes
           <li className={activeDropdown === "SWITCH" ? "active" : ""}>
             <a href="#" onClick={(e) => toggleDropdown(e, "SWITCH")}>
               SWITCH
@@ -292,7 +388,11 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("SWITCH", "juegos")}
+=======
+                      onClick={(e) => handleNavegacion(e, "SWITCH", "juegos")}
+>>>>>>> Stashed changes
                     >
                       Juegos
                     </a>
@@ -300,7 +400,13 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("SWITCH", "accesorios")}
+=======
+                      onClick={(e) =>
+                        handleNavegacion(e, "SWITCH", "accesorios")
+                      }
+>>>>>>> Stashed changes
                     >
                       Accesorios
                     </a>
@@ -308,7 +414,11 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("SWITCH", "consolas")}
+=======
+                      onClick={(e) => handleNavegacion(e, "SWITCH", "consolas")}
+>>>>>>> Stashed changes
                     >
                       Consolas
                     </a>
@@ -318,6 +428,10 @@ export default function Componenteheader({ onNavegar }) {
             </div>
           </li>
 
+<<<<<<< Updated upstream
+=======
+          {/* SWITCH 2 */}
+>>>>>>> Stashed changes
           <li className={activeDropdown === "SWITCH2" ? "active" : ""}>
             <a href="#" onClick={(e) => toggleDropdown(e, "SWITCH2")}>
               SWITCH 2
@@ -328,7 +442,11 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("SWITCH2", "juegos")}
+=======
+                      onClick={(e) => handleNavegacion(e, "SWITCH2", "juegos")}
+>>>>>>> Stashed changes
                     >
                       Juegos
                     </a>
@@ -336,7 +454,13 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("SWITCH2", "accesorios")}
+=======
+                      onClick={(e) =>
+                        handleNavegacion(e, "SWITCH2", "accesorios")
+                      }
+>>>>>>> Stashed changes
                     >
                       Accesorios
                     </a>
@@ -344,7 +468,13 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("SWITCH2", "consolas")}
+=======
+                      onClick={(e) =>
+                        handleNavegacion(e, "SWITCH2", "consolas")
+                      }
+>>>>>>> Stashed changes
                     >
                       Consolas
                     </a>
@@ -354,6 +484,10 @@ export default function Componenteheader({ onNavegar }) {
             </div>
           </li>
 
+<<<<<<< Updated upstream
+=======
+          {/* Otros */}
+>>>>>>> Stashed changes
           <li className={activeDropdown === "OTROS" ? "active" : ""}>
             <a href="#" onClick={(e) => toggleDropdown(e, "OTROS")}>
               Otros
@@ -364,7 +498,13 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("OTROS", "accesorios")}
+=======
+                      onClick={(e) =>
+                        handleNavegacion(e, "OTROS", "accesorios")
+                      }
+>>>>>>> Stashed changes
                     >
                       Accesorios
                     </a>
@@ -372,7 +512,11 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("OTROS", "mandos")}
+=======
+                      onClick={(e) => handleNavegacion(e, "OTROS", "mandos")}
+>>>>>>> Stashed changes
                     >
                       Mandos
                     </a>
@@ -380,7 +524,11 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
+<<<<<<< Updated upstream
                       onClick={() => handleNavegacion("OTROS", "consolas")}
+=======
+                      onClick={(e) => handleNavegacion(e, "OTROS", "consolas")}
+>>>>>>> Stashed changes
                     >
                       Consolas
                     </a>

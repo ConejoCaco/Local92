@@ -3,6 +3,7 @@ import CardJuego from "./CardJuego";
 import CardBotones from "./CardBotones";
 import "../estilos/Componentecatalogo.css";
 
+<<<<<<< Updated upstream
 const titulos = {
   PS5: "PLAYSTATION 5",
   PS4: "PLAYSTATION 4",
@@ -14,6 +15,9 @@ const titulos = {
 };
 
 export default function ComponenteCatalogo({ onNavegar, plataforma = "PS5" }) {
+=======
+export default function ComponenteCatalogo() {
+>>>>>>> Stashed changes
   return (
     <div className="catalogo-container">
       <h1 className="catalogo-title">

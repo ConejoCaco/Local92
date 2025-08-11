@@ -1,20 +1,33 @@
 const juegosSwitch = [
   {
     id: 1,
+<<<<<<< Updated upstream
     titulo: "The Legend of Zelda: Breath of the Wild",
     precio: 49900,
     stock: 12,
     imagen: "zelda-botw.jpg",
+=======
+    titulo: "The Legend of Zelda: Tears of the Kingdom",
+    precio: 69900,
+    stock: 18,
+    imagen: "zelda-tears.jpg",
+>>>>>>> Stashed changes
   },
   {
     id: 2,
     titulo: "Super Mario Odyssey",
+<<<<<<< Updated upstream
     precio: 45900,
     stock: 14,
+=======
+    precio: 54900,
+    stock: 10,
+>>>>>>> Stashed changes
     imagen: "mario-odyssey.jpg",
   },
   {
     id: 3,
+<<<<<<< Updated upstream
     titulo: "Mario Kart 8 Deluxe",
     precio: 39900,
     stock: 10,
@@ -142,3 +155,25 @@ const juegosSwitch = [
 ];
 
 export default juegosSwitch;
+=======
+    titulo: "Animal Crossing: New Horizons",
+    precio: 59900,
+    stock: 22,
+    imagen: "animal-crossing.jpg",
+  },
+  {
+    id: 4,
+    titulo: "Metroid Dread",
+    precio: 49900,
+    stock: 7,
+    imagen: "metroid-dread.jpg",
+  },
+  {
+    id: 5,
+    titulo: "Splatoon 3",
+    precio: 64900,
+    stock: 15,
+    imagen: "splatoon3.jpg",
+  },
+];
+>>>>>>> Stashed changes

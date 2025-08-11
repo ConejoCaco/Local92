@@ -1,5 +1,6 @@
 import React from "react";
 import juegosPs5 from "../juegos/juegosPs5";
+<<<<<<< Updated upstream
 import juegosPs4 from "../juegos/juegosPs4";
 import juegosPs3 from "../juegos/juegosPs3";
 import juegosXone from "../juegos/juegosXone";
@@ -49,6 +50,12 @@ export default function CardJuego({ limite, plataforma = "PS5" }) {
       </div>
     );
   }
+=======
+import "../estilos/CardJuego.css";
+
+export default function CardJuego() {
+  const juegos = juegosPs5;
+>>>>>>> Stashed changes
 
   return (
     <div className="grid-juegos">
