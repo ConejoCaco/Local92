@@ -34,7 +34,6 @@ const juegosPs4 = [
     stock: 9,
     imagen: "mh-world.jpg",
   },
-<<<<<<< Updated upstream
   {
     id: 15,
     titulo: "Horizon Zero Dawn",
@@ -127,8 +126,6 @@ const juegosPs4 = [
     stock: 10,
     imagen: "sotc-remake.jpg",
   },
-=======
->>>>>>> Stashed changes
 ];
 
 export default juegosPs4;

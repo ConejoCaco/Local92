@@ -1,14 +1,8 @@
-<<<<<<< Updated upstream
 .card-botones-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 10px;
-=======
-.card-botones {
-  padding: 10px 0 0 10px;
-  margin-left: 30px;
->>>>>>> Stashed changes
 }
 
 .boton-categoria {
@@ -19,17 +13,8 @@
   border-radius: 8px;
   color: #f8a600;
   font-family: "Play", sans-serif;
-<<<<<<< Updated upstream
   font-size: 0.7em;
   font-weight: 600;
-=======
-  font-size: 0.55em;
-  font-weight: 700;
-  text-align: left;
-  padding: 6px 8px;
-  margin-bottom: 10px;
-  cursor: pointer;
->>>>>>> Stashed changes
   text-transform: uppercase;
   letter-spacing: 0.5px;
   cursor: pointer;

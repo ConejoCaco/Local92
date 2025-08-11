@@ -2,17 +2,10 @@ import React from "react";
 import juegosPs5 from "../juegos/juegosPs5";
 import juegosPs4 from "../juegos/juegosPs4";
 import juegosPs3 from "../juegos/juegosPs3";
-<<<<<<< Updated upstream
 import juegosXone from "../juegos/juegosXone";
 import juegosX360 from "../juegos/juegosX360";
 import juegosSwitch from "../juegos/juegosSwitch";
 import juegosSwitch2 from "../juegos/juegosSwitch2";
-=======
-import juegosXboxOne from "../juegos/juegosXone";
-import juegosXbox360 from "../juegos/juegosX360";
-import juegosSwitch from "../juegos/juegosSwitch";
-
->>>>>>> Stashed changes
 import accesoriosPs5 from "../accesorios/accesoriosPs5";
 import accesoriosPs4 from "../accesorios/accesoriosPs4";
 
@@ -50,55 +43,35 @@ export default function CardJuegoCompleto({
         return [];
 
       case "XONE_juegos":
-<<<<<<< Updated upstream
         return juegosXone;
-=======
-        return [];
->>>>>>> Stashed changes
       case "XONE_accesorios":
         return [];
       case "XONE_consolas":
         return [];
 
       case "X360_juegos":
-<<<<<<< Updated upstream
         return juegosX360;
-=======
-        return [];
->>>>>>> Stashed changes
       case "X360_accesorios":
         return [];
       case "X360_consolas":
         return [];
 
       case "SWITCH_juegos":
-<<<<<<< Updated upstream
         return juegosSwitch;
-=======
-        return [];
->>>>>>> Stashed changes
       case "SWITCH_accesorios":
         return [];
       case "SWITCH_consolas":
         return [];
 
       case "SWITCH2_juegos":
-<<<<<<< Updated upstream
         return juegosSwitch2;
-=======
-        return [];
->>>>>>> Stashed changes
       case "SWITCH2_accesorios":
         return [];
       case "SWITCH2_consolas":
         return [];
 
       case "OTROS_accesorios":
-<<<<<<< Updated upstream
         return accesoriosPs4, accesoriosPs5;
-=======
-        return [];
->>>>>>> Stashed changes
       case "OTROS_mandos":
         return [];
       case "OTROS_consolas":
@@ -170,14 +143,10 @@ export default function CardJuegoCompleto({
                 <div className="precio-compact">
                   ${item.precio.toLocaleString()}
                 </div>
-<<<<<<< Updated upstream
                 <button className="btn-comprar-compact">
                   {" "}
                   AGREGAR AL CARRITO
                 </button>
-=======
-                <button className="btn-comprar-compact">+ CARRITO</button>
->>>>>>> Stashed changes
               </div>
             </div>
           </div>

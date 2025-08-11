@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import alanWake from "../img/alan-wake.webp";
 import clairObscur from "../img/clairObscur.jpg";
 import cyberpunk from "../img/cyberpunk.webp";
@@ -19,13 +18,6 @@ import sackboy from "../img/sack-boy.webp";
 import streetFighter from "../img/street-fighter.webp";
 import wukong from "../img/wukong.png";
 import gtaV from "../img/gtav.jpg";
-=======
-import eldenRing from "../img/elden-ring.jpg";
-import gtaV from "../img/gtav.jpg";
-import madison from "../img/madison.png";
-import bWukong from "../img/wukong.png";
-import clairObscur from "../img/clairObscur.jpg";
->>>>>>> Stashed changes
 
 const juegosPs5 = [
   {
@@ -40,11 +32,7 @@ const juegosPs5 = [
     titulo: "Black Myth: Wukong",
     precio: 74900,
     stock: 8,
-<<<<<<< Updated upstream
     imagen: wukong,
-=======
-    imagen: bWukong,
->>>>>>> Stashed changes
   },
   {
     id: 3,
@@ -72,51 +60,34 @@ const juegosPs5 = [
     titulo: "Final Fantasy XVI",
     precio: 74900,
     stock: 14,
-<<<<<<< Updated upstream
     imagen: finalFantasy,
-=======
-    imagen: "ff16.jpg",
->>>>>>> Stashed changes
   },
   {
     id: 12,
     titulo: "Marvel's Spider-Man: Miles Morales",
     precio: 49900,
     stock: 11,
-<<<<<<< Updated upstream
     imagen: milesMorales,
-=======
-    imagen: "spiderman-miles.jpg",
->>>>>>> Stashed changes
   },
   {
     id: 13,
     titulo: "Returnal",
     precio: 69900,
     stock: 5,
-<<<<<<< Updated upstream
     imagen: returnal,
-=======
-    imagen: "returnal.jpg",
->>>>>>> Stashed changes
   },
   {
     id: 14,
     titulo: "Deathloop",
     precio: 59900,
     stock: 8,
-<<<<<<< Updated upstream
     imagen: deathloop,
-=======
-    imagen: "deathloop.jpg",
->>>>>>> Stashed changes
   },
   {
     id: 15,
     titulo: "Sackboy: A Big Adventure",
     precio: 44900,
     stock: 12,
-<<<<<<< Updated upstream
     imagen: sackboy,
   },
   {
@@ -188,9 +159,6 @@ const juegosPs5 = [
     precio: 64900,
     stock: 5,
     imagen: alanWake,
-=======
-    imagen: "sackboy.jpg",
->>>>>>> Stashed changes
   },
 ];
 

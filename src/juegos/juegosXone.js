@@ -1,7 +1,6 @@
 const juegosXone = [
   {
     id: 1,
-<<<<<<< Updated upstream
     titulo: "Halo 5: Guardians",
     precio: 19900,
     stock: 10,
@@ -11,29 +10,10 @@ const juegosXone = [
     id: 2,
     titulo: "Gears 5",
     precio: 24900,
-=======
-    titulo: "Halo Infinite",
-    precio: 59900,
-    stock: 15,
-    imagen: "halo-infinite.jpg",
-  },
-  {
-    id: 2,
-    titulo: "Forza Horizon 5",
-    precio: 64900,
-    stock: 12,
-    imagen: "forza-horizon5.jpg",
-  },
-  {
-    id: 3,
-    titulo: "Gears 5",
-    precio: 34900,
->>>>>>> Stashed changes
     stock: 8,
     imagen: "gears5.jpg",
   },
   {
-<<<<<<< Updated upstream
     id: 3,
     titulo: "Forza Horizon 4",
     precio: 29900,
@@ -46,18 +26,10 @@ const juegosXone = [
     precio: 22900,
     stock: 7,
     imagen: "sea-of-thieves.jpg",
-=======
-    id: 4,
-    titulo: "Sea of Thieves",
-    precio: 39900,
-    stock: 14,
-    imagen: "sea-thieves.jpg",
->>>>>>> Stashed changes
   },
   {
     id: 5,
     titulo: "Ori and the Will of the Wisps",
-<<<<<<< Updated upstream
     precio: 17900,
     stock: 9,
     imagen: "ori-will.jpg",
@@ -158,10 +130,3 @@ const juegosXone = [
 ];
 
 export default juegosXone;
-=======
-    precio: 29900,
-    stock: 6,
-    imagen: "ori2.jpg",
-  },
-];
->>>>>>> Stashed changes
