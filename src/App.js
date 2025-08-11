@@ -29,22 +29,9 @@ function App() {
     categoria: null,
   });
 
-  useEffect(() => {
-    const path = location.pathname;
-    if (path === "/") {
-      setPaginaActual({ seccion: "inicio", consola: null, categoria: null });
-    } else if (path.startsWith("/catalogo/")) {
-      const parts = path.split("/");
-      if (parts.length >= 4) {
-        setPaginaActual({
-          seccion: "catalogo",
-          consola: parts[2],
-          categoria: parts[3],
-        });
-      }
-    }
-  }, [location]);
-
+  {
+    /*comentario para  validar un push*/
+  }
   const cambiarPagina = (seccion, consola = null, categoria = null) => {
     setPaginaActual({ seccion, consola, categoria });
     if (seccion === "inicio") {
