@@ -2,7 +2,7 @@ import React from 'react';
 import "../estilos/ComponenteitemPedido.css";
 
 
-export default function Componenteitempedido({ id, nombre, precio, estado, cambiarEstado }) {
+export default function Componenteitempedido({ id, nombre, rut,  precio, estado, cambiarEstado }) {
 
   const cambiarColorestado = (estado) => {
     switch (estado) {
@@ -24,6 +24,7 @@ export default function Componenteitempedido({ id, nombre, precio, estado, cambi
       
       <span className='pedido-col pedido-cliente'>{nombre}</span>
       <span className='pedido-col pedido-total'> ${precio}</span>
+      <span className='pedido-col pedido-cliente'>{rut}</span>
       <span className={`pedido-col pedido-estado ${cambiarColorestado(estado)}`}>{estado}</span>
       <select 
         className='cambioestado'

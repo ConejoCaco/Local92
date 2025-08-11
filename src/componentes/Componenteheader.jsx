@@ -9,6 +9,16 @@ export default function Componenteheader({ onNavegar }) {
     setActiveDropdown(null);
   };
 
+  /*const handleNavegacion = (e, consola, categoria) => {
+  e.preventDefault();
+  if (consola === "login") {
+    onNavegar("login");
+  } else {
+    onNavegar("catalogo", consola, categoria);
+  }
+  setActiveDropdown(null);
+};*/
+
   const toggleDropdown = (e, consola) => {
     e.preventDefault();
     setActiveDropdown(activeDropdown === consola ? null : consola);
@@ -378,7 +388,7 @@ export default function Componenteheader({ onNavegar }) {
                   <li>
                     <a
                       href="#"
-                      onClick={() => handleNavegacion("OTROS", "otros")}
+                      onClick={(e) => handleNavegacion(e, "OTROS", "otros")}
                     >
                       Otros
                     </a>

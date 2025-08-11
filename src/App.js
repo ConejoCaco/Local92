@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   useNavigate,
-  useLocation,
 } from "react-router-dom";
 import "./App.css";
 import Componenteheader from "./componentes/Componenteheader";
 import Footer from "./componentes/Footer";
 import Body from "./componentes/Body";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ComponentepanelLogin from "./componentes/ComponentepanelLogin";
 
 function AppWrapper() {
   return (
@@ -55,16 +55,27 @@ function App() {
   };
 
   return (
-    <>
-      <Componenteheader onNavegar={cambiarPagina} />
-      <Body
-        paginaActual={paginaActual.seccion}
-        consola={paginaActual.consola}
-        categoria={paginaActual.categoria}
-        onNavegar={cambiarPagina}
-      />
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Componenteheader onNavegar={cambiarPagina} />
+              <Body
+                paginaActual={paginaActual.seccion}
+                consola={paginaActual.consola}
+                categoria={paginaActual.categoria}
+              />
+            </>
+          }
+        />
+
+        <Route path="/login" element={<ComponentepanelLogin />} />
+      </Routes>
+
       <Footer />
-    </>
+    </Router>
   );
 }
 
