@@ -12,17 +12,7 @@ import Body from "./componentes/Body";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ComponentepanelLogin from "./componentes/ComponentepanelLogin";
 
-function AppWrapper() {
-  return (
-    <Router>
-      <App />
-    </Router>
-  );
-}
-
 function App() {
-  const location = useLocation();
-  const navigate = useNavigate();
   const [paginaActual, setPaginaActual] = useState({
     seccion: "inicio",
     consola: null,
@@ -34,11 +24,6 @@ function App() {
   }
   const cambiarPagina = (seccion, consola = null, categoria = null) => {
     setPaginaActual({ seccion, consola, categoria });
-    if (seccion === "inicio") {
-      navigate("/");
-    } else if (seccion === "catalogo") {
-      navigate(`/catalogo/${consola}/${categoria}`);
-    }
   };
 
   return (
@@ -66,4 +51,4 @@ function App() {
   );
 }
 
-export default AppWrapper;
+export default App;
