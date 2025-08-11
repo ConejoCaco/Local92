@@ -17,6 +17,7 @@ function App() {
     categoria: null,
   });
 
+  {/*comentario para  validar un push*/}
   const cambiarPagina = (seccion, consola = null, categoria = null) => {
     setPaginaActual({
       seccion,
