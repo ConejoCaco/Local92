@@ -6,12 +6,16 @@ import ComponenteItemPedido from './ComponenteitemPedido.jsx';
 import "../estilos/ComponenteitemPedido.css";
 
 export default function Dashboardlistadoproductos({ tipo }) {
-  
-  const [items, setItems] = useState(
-    tipo === 'Stock' ? juegosPs5 : datotempClientes
-  );
-  
+  const [items, setItems] = useState([]);
 
+  useEffect(() => {
+    if (tipo === 'Stock') {
+      setItems(juegosPs5);
+    } else if (tipo === 'Pedidos') {
+      setItems(datotempClientes);
+    }
+  }, [tipo]); //cuadno cambia el tipo se actualiza la lista
+  
   const agregarStock = (id, nuevoStock) => {
     setItems(prev =>
       prev.map(item =>
@@ -28,7 +32,6 @@ export default function Dashboardlistadoproductos({ tipo }) {
     );
   };
 
-  // para renderizar segun el parametro 
   const renderItem = (item) => {
     if (tipo === 'Stock') {
       return (
