@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+.dashboard-login{
+    padding: 20px;
+    margin: 40px auto;
+    font-family: "Play", sans-serif ;
+}
+
+.pixel-card {
+  background-color: #fffaf0 !important;
+  
+  border-radius: 25px !important; 
+  font-size: 20px !important;
+  font-weight: bold;
+  font-family: "Play", sans-serif ;
+}
+
+.pixel-card h2 {
+  color: #1e3a5f; 
+}
+.pixel-card button {
+  background-color: #1e3a5f;
+  color: white;
+  border: 3px solid #333;
+  border-radius: 0;
+  font-weight: bold;
+  transition: background 0.2s ease;
+  margin-top: 15px;
+}
+.pixel-card label{
+  color: #1e3a5f !important; ;
+}
+
+.admin-content {
+  margin-top: 5%;}

@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+.pixel-card {
+  background-color:#fffaf0 !important;
+  border: 3px solid #333 !important; 
+  border-radius: 25px !important; 
+  /*font-family: 'press start 2p', cursive !important;*/
+  font-size: 20px !important;
+  font-weight: bold;
+  font-family: "Play", sans-serif ;
+}
+label{
+  color: #1e3a5f !important; ;
+}
+
+
+.pixel-card h2 {
+  color: #1e3a5f; 
+  
+  
+}
+
+.pixel-card input,
+.pixel-card textarea,
+.pixel-card select {
+  border: 3px solid #333;
+  border-radius: 0;
+  background-color: #fff8dc; 
+  font-size: bold;
+}
+
+.pixel-card button {
+  background-color: #1e3a5f;
+  color: white;
+  border: 3px solid #333;
+  border-radius: 0;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.pixel-card button:hover {
+  background-color: #fff5e1;
+  color: #000;
+}
+.pixel-card button:active {
+  background-color: #a67c00;
+  border-color: #a67c00;
+  color: #fffaf0;
+}
