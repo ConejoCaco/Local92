@@ -67,6 +67,26 @@ export default function Dashboardlistadoproductos({ tipo }) {
         <h2 className='text-center mb-4'>
           {tipo === 'Stock' ? 'Stock de juegos' : 'Lista de Pedidos'}
         </h2>
+        <div className='barra-busqueda mb-3'>
+          <input type='text' className='form-control' placeholder='Buscar...' onChange={
+            tipo === 'Stock'
+              ? (e) => {
+                  const query = e.target.value.toLowerCase();
+                  setItems(juegosPs5.filter(item => item.titulo.toLowerCase().includes(query)));
+                }
+              : (e) => {
+                  const query = e.target.value.toLowerCase();
+                  setItems(datotempClientes.filter(item => item.nombre.toLowerCase().includes(query) || item.rut.toLowerCase().includes(query)));
+          }} />
+        </div>
+        <div className='d-flex justify-content-between mb-3'>
+          <span className='col-4 title1'>Nombre</span>
+          {tipo === 'Stock' && <span className='col-2 title'>Precio</span>}
+          {tipo === 'Stock' && <span className='col-2 title'>Stock</span>}
+          {tipo === 'Pedidos' && <span className='col-2 title'>Rut</span>}
+          {tipo === 'Pedidos' && <span className='col-2 title'>Estado</span>}
+        </div>
+        
         <div className='lista-pedidos'>
           {items.map(renderItem)}
         </div>
