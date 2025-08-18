@@ -112,6 +112,111 @@
   box-shadow: 0 2px 8px rgba(248, 166, 0, 0.3);
 }
 
+.catalogo-con-paginacion {
+  width: 100%;
+}
+
+.paginacion-container {
+  margin-top: 30px;
+  padding: 20px 0;
+  border-top: 1px solid #3a3a3a;
+}
+
+.paginacion-info {
+  font-family: "Play", sans-serif;
+  font-size: 0.9em;
+  color: #ccc;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.paginacion-controles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-paginacion {
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-family: "Play", sans-serif;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-paginacion:hover:not(:disabled) {
+  background: #f8a600;
+  color: #222;
+  border-color: #f8a600;
+}
+
+.btn-paginacion:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.numeros-pagina {
+  display: flex;
+  gap: 5px;
+  margin: 0 15px;
+}
+
+.btn-numero-pagina {
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-family: "Play", sans-serif;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-numero-pagina:hover {
+  background: #3a3a3a;
+  border-color: #f8a600;
+}
+
+.btn-numero-pagina.activa {
+  background: #f8a600;
+  color: #222;
+  border-color: #f8a600;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .paginacion-controles {
+    gap: 8px;
+  }
+
+  .numeros-pagina {
+    margin: 0 10px;
+    gap: 3px;
+  }
+
+  .btn-numero-pagina {
+    width: 35px;
+    height: 35px;
+    font-size: 0.8em;
+  }
+
+  .btn-paginacion {
+    padding: 6px 12px;
+    font-size: 0.8em;
+  }
+}
+
 @media (max-width: 768px) {
   .card-juego-compact {
     min-width: 320px;

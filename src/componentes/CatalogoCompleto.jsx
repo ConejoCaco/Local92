@@ -2,7 +2,7 @@ import React from "react";
 import CardJuegoCompleto from "./CardJuegoCompleto";
 import "../estilos/CatalogoCompleto.css";
 
-export default function CatalogoCompleto({ consola, categoria }) {
+export default function CatalogoCompleto({ consola, categoria, onNavegar }) {
   const obtenerTitulo = () => {
     const nombresConsola = {
       XONE: "XBOX ONE",
@@ -26,7 +26,11 @@ export default function CatalogoCompleto({ consola, categoria }) {
     <div className="catalogo-completo-container">
       <h1 className="catalogo-completo-title">{obtenerTitulo()}</h1>
       <div className="contenedor-juegos-compacto">
-        <CardJuegoCompleto consola={consola} categoria={categoria} />
+        <CardJuegoCompleto
+          consola={consola}
+          categoria={categoria}
+          onNavegar={onNavegar}
+        />
       </div>
     </div>
   );

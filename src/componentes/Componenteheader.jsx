@@ -1,23 +1,93 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
+import juegosPs5 from "../juegos/juegosPs5";
+import juegosPs4 from "../juegos/juegosPs4";
+import juegosPs3 from "../juegos/juegosPs3";
+import juegosXone from "../juegos/juegosXone";
+import juegosX360 from "../juegos/juegosX360";
+import juegosSwitch from "../juegos/juegosSwitch";
+import juegosSwitch2 from "../juegos/juegosSwitch2";
+import accesoriosPs5 from "../accesorios/accesoriosPs5";
+import accesoriosPs4 from "../accesorios/accesoriosPs4";
 import "../estilos/Componenteheader.css";
 
 export default function Componenteheader({ onNavegar }) {
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [terminoBusqueda, setTerminoBusqueda] = useState("");
+  const [sugerenciasMostrar, setSugerenciasMostrar] = useState(false);
+  const [sugerenciaSeleccionada, setSugerenciaSeleccionada] = useState(-1);
+
+  const todosLosProductos = useMemo(() => {
+    return [
+      ...juegosPs5.map((item) => ({
+        ...item,
+        consola: "PS5",
+        categoria: "juegos",
+      })),
+      ...juegosPs4.map((item) => ({
+        ...item,
+        consola: "PS4",
+        categoria: "juegos",
+      })),
+      ...juegosPs3.map((item) => ({
+        ...item,
+        consola: "PS3",
+        categoria: "juegos",
+      })),
+      ...juegosXone.map((item) => ({
+        ...item,
+        consola: "XONE",
+        categoria: "juegos",
+      })),
+      ...juegosX360.map((item) => ({
+        ...item,
+        consola: "X360",
+        categoria: "juegos",
+      })),
+      ...juegosSwitch.map((item) => ({
+        ...item,
+        consola: "SWITCH",
+        categoria: "juegos",
+      })),
+      ...juegosSwitch2.map((item) => ({
+        ...item,
+        consola: "SWITCH2",
+        categoria: "juegos",
+      })),
+      ...accesoriosPs5.map((item) => ({
+        ...item,
+        consola: "PS5",
+        categoria: "accesorios",
+      })),
+      ...accesoriosPs4.map((item) => ({
+        ...item,
+        consola: "PS4",
+        categoria: "accesorios",
+      })),
+    ];
+  }, []);
+
+  const sugerencias = useMemo(() => {
+    if (!terminoBusqueda || terminoBusqueda.trim().length < 2) {
+      return [];
+    }
+
+    const terminoLimpio = terminoBusqueda.toLowerCase().trim();
+    const sugerenciasSet = new Set();
+
+    todosLosProductos.forEach((producto) => {
+      const titulo = producto.titulo.toLowerCase();
+      if (titulo.includes(terminoLimpio)) {
+        sugerenciasSet.add(producto.titulo);
+      }
+    });
+
+    return Array.from(sugerenciasSet).slice(0, 6);
+  }, [terminoBusqueda, todosLosProductos]);
 
   const handleNavegacion = (consola, categoria) => {
     onNavegar("catalogo", consola, categoria);
     setActiveDropdown(null);
   };
-
-  /*const handleNavegacion = (e, consola, categoria) => {
-  e.preventDefault();
-  if (consola === "login") {
-    onNavegar("login");
-  } else {
-    onNavegar("catalogo", consola, categoria);
-  }
-  setActiveDropdown(null);
-};*/
 
   const toggleDropdown = (e, consola) => {
     e.preventDefault();
@@ -28,6 +98,67 @@ export default function Componenteheader({ onNavegar }) {
     e.preventDefault();
     onNavegar("inicio");
     setActiveDropdown(null);
+  };
+
+  const manejarBusqueda = (e) => {
+    e.preventDefault();
+    if (terminoBusqueda.trim()) {
+      onNavegar("busqueda", null, null, null, terminoBusqueda.trim());
+      setActiveDropdown(null);
+    }
+  };
+
+  const manejarCambioBusqueda = (e) => {
+    setTerminoBusqueda(e.target.value);
+    if (e.target.value.trim().length >= 2) {
+      setSugerenciasMostrar(true);
+    } else {
+      setSugerenciasMostrar(false);
+    }
+    setSugerenciaSeleccionada(-1);
+  };
+
+  const manejarFocusBusqueda = () => {
+    if (terminoBusqueda.trim().length >= 2) {
+      setSugerenciasMostrar(true);
+    }
+    setActiveDropdown(null);
+  };
+
+  const manejarBlurBusqueda = () => {
+    setTimeout(() => {
+      setSugerenciasMostrar(false);
+      setSugerenciaSeleccionada(-1);
+    }, 150);
+  };
+
+  const handleSugerenciaClick = (sugerencia) => {
+    setTerminoBusqueda(sugerencia);
+    setSugerenciasMostrar(false);
+    setSugerenciaSeleccionada(-1);
+    onNavegar("busqueda", null, null, null, sugerencia);
+  };
+
+  const manejarTeclaBusqueda = (e) => {
+    if (e.key === "Enter") {
+      manejarBusqueda(e);
+    } else if (sugerencias.length > 0) {
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        setSugerenciaSeleccionada((prev) =>
+          prev < sugerencias.length - 1 ? prev + 1 : prev
+        );
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        setSugerenciaSeleccionada((prev) => (prev > 0 ? prev - 1 : -1));
+      } else if (e.key === "Enter" && sugerenciaSeleccionada >= 0) {
+        e.preventDefault();
+        handleSugerenciaClick(sugerencias[sugerenciaSeleccionada]);
+      } else if (e.key === "Escape") {
+        setSugerenciasMostrar(false);
+        setSugerenciaSeleccionada(-1);
+      }
+    }
   };
 
   return (
@@ -44,15 +175,44 @@ export default function Componenteheader({ onNavegar }) {
         </div>
 
         <div className="buscadorTop">
-          <input
-            name="consulta"
-            type="text"
-            id="buscadorTopProductos"
-            size="40"
-            autoComplete="off"
-            className="inputBuscador"
-            placeholder="Buscar..."
-          />
+          <form
+            onSubmit={manejarBusqueda}
+            style={{ display: "flex", width: "100%", position: "relative" }}
+          >
+            <input
+              name="consulta"
+              type="text"
+              id="buscadorTopProductos"
+              size="40"
+              autoComplete="off"
+              className="inputBuscador"
+              placeholder="Buscar juegos..."
+              value={terminoBusqueda}
+              onChange={manejarCambioBusqueda}
+              onKeyDown={manejarTeclaBusqueda}
+              onFocus={manejarFocusBusqueda}
+              onBlur={manejarBlurBusqueda}
+            />
+
+            {sugerenciasMostrar && sugerencias.length > 0 && (
+              <div className="sugerencias-header-dropdown">
+                {sugerencias.map((sugerencia, index) => (
+                  <div
+                    key={index}
+                    className={`sugerencia-header-item ${
+                      index === sugerenciaSeleccionada ? "seleccionada" : ""
+                    }`}
+                    onClick={() => handleSugerenciaClick(sugerencia)}
+                  >
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="#999">
+                      <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                    </svg>
+                    {sugerencia}
+                  </div>
+                ))}
+              </div>
+            )}
+          </form>
         </div>
 
         <div className="social" style={{ minWidth: "600px" }}>

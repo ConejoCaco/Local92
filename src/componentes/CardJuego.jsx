@@ -1,4 +1,6 @@
 import React from "react";
+import ReactDOM from "react-dom/client";
+import JuegoCompleto from "./JuegoCompleto";
 import juegosPs5 from "../juegos/juegosPs5";
 import juegosPs4 from "../juegos/juegosPs4";
 import juegosPs3 from "../juegos/juegosPs3";
@@ -19,28 +21,18 @@ const juegosPorPlataforma = {
   PC: [],
 };
 
-export default function CardJuego({ limite, plataforma = "PS5" }) {
+export default function CardJuego({ limite, plataforma = "PS5", onNavegar }) {
   const todosLosJuegos = juegosPorPlataforma[plataforma] || [];
 
-  if (!Array.isArray(todosLosJuegos)) {
-    console.error(
-      `Los juegos para ${plataforma} no son un array:`,
-      todosLosJuegos
-    );
-    return (
-      <div className="sin-juegos">
-        <p>Error cargando juegos para {plataforma}</p>
-      </div>
-    );
-  }
+  const mostrarJuegoCompleto = (juego) => {
+    const root = ReactDOM.createRoot(document.body);
+    root.render(<JuegoCompleto juego={juego} />);
+  };
 
-  let juegos;
-
-  if (limite && todosLosJuegos.length > 0) {
-    juegos = todosLosJuegos.slice(0, limite);
-  } else {
-    juegos = todosLosJuegos;
-  }
+  let juegos =
+    limite && todosLosJuegos.length > 0
+      ? todosLosJuegos.slice(0, limite)
+      : todosLosJuegos;
 
   if (juegos.length === 0) {
     return (
@@ -53,7 +45,12 @@ export default function CardJuego({ limite, plataforma = "PS5" }) {
   return (
     <div className="grid-juegos">
       {juegos.map((juego) => (
-        <div key={juego.id} className="card-juego">
+        <div
+          key={juego.id}
+          className="card-juego"
+          onClick={() => onNavegar("juego", plataforma, null, juego)}
+          style={{ cursor: "pointer" }}
+        >
           <div className="juego-imagen">
             <img
               src={juego.imagen}

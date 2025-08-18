@@ -18,14 +18,25 @@ import sackboy from "../img/sack-boy.webp";
 import streetFighter from "../img/street-fighter.webp";
 import wukong from "../img/wukong.png";
 import gtaV from "../img/gtav.jpg";
+import theLastOfUs from "../img/tlou.webp";
+import ghostOfTsushima from "../img/got.webp";
+import tekken8 from "../img/tekken8.png";
+import assassinMirage from "../img/acreed.webp";
+import ff7Rebirth from "../img/ffvii.webp";
 
 const juegosPs5 = [
   {
     id: 1,
     titulo: "Elden Ring Nightreign",
-    precio: 39900,
+    precio: 29900,
     stock: 15,
     imagen: eldenRing,
+    descripcion: `Elden Ring: Nightreign es una expansión independiente ambientada en el oscuro y vasto mundo creado por FromSoftware. 
+  Este capítulo lleva la fórmula soulslike a nuevas alturas, con un mapa inédito repleto de secretos, jefes colosales y una narrativa envuelta 
+  en misterio. Los jugadores se adentrarán en tierras malditas donde la noche eterna domina el cielo, enfrentando enemigos más astutos y agresivos, 
+  y descubriendo armas y armaduras únicas con habilidades especiales. Perfecto para los amantes de la exploración, el combate desafiante y la atmósfera opresiva 
+  que caracteriza a la saga.`,
+    video: "https://www.youtube.com/embed/AWrXpJQBJF0",
   },
   {
     id: 2,
@@ -159,6 +170,41 @@ const juegosPs5 = [
     precio: 64900,
     stock: 5,
     imagen: alanWake,
+  },
+  {
+    id: 26,
+    titulo: "The Last of Us Part I",
+    precio: 69900,
+    stock: 10,
+    imagen: theLastOfUs,
+  },
+  {
+    id: 27,
+    titulo: "Ghost of Tsushima: Director's Cut",
+    precio: 59900,
+    stock: 8,
+    imagen: ghostOfTsushima,
+  },
+  {
+    id: 28,
+    titulo: "Tekken 8",
+    precio: 74900,
+    stock: 12,
+    imagen: tekken8,
+  },
+  {
+    id: 29,
+    titulo: "Assassin's Creed Mirage",
+    precio: 59900,
+    stock: 9,
+    imagen: assassinMirage,
+  },
+  {
+    id: 30,
+    titulo: "Final Fantasy VII Rebirth",
+    precio: 74900,
+    stock: 14,
+    imagen: ff7Rebirth,
   },
 ];
 

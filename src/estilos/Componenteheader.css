@@ -239,87 +239,68 @@ body {
   transform: none !important;
 }
 
-/* Responsive */
-@media (max-width: 1021px) {
-  #nav {
-    flex-wrap: wrap;
-    padding: 10px;
-  }
+.sugerencias-header-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #2a2a2a;
+  border: 2px solid #f8a600;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
 
-  .social {
-    min-width: 0;
-    width: 100%;
-  }
+.sugerencia-header-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Play", sans-serif;
+  color: #ccc;
+  border-bottom: 1px solid #3a3a3a;
+  font-size: 14px;
+}
 
-  .buscadorTop {
-    max-width: 300px;
-  }
+.sugerencia-header-item:last-child {
+  border-bottom: none;
+}
 
-  #menu.productos {
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+.sugerencia-header-item:hover,
+.sugerencia-header-item.seleccionada {
+  background: #f8a600;
+  color: #222;
+}
 
-  #menu.productos a {
-    padding: 10px 15px;
-    font-size: 10px;
-  }
+.sugerencia-header-item svg {
+  flex-shrink: 0;
+}
+
+.sugerencias-header-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sugerencias-header-dropdown::-webkit-scrollbar-thumb {
+  background: #f8a600;
+  border-radius: 3px;
+}
+
+.sugerencias-header-dropdown::-webkit-scrollbar-track {
+  background: #3a3a3a;
 }
 
 @media (max-width: 768px) {
-  #nav {
-    flex-direction: column;
-    align-items: stretch;
+  .sugerencias-header-dropdown {
+    max-height: 150px;
   }
 
-  .logo {
-    text-align: center;
-    margin-right: 0;
-    margin-bottom: 15px;
-  }
-
-  .buscadorTop {
-    margin: 0 0 15px 0;
-    max-width: 100%;
-  }
-
-  .social {
-    min-width: 0;
-    width: 100%;
-    margin-left: 0;
-    margin-bottom: 15px;
-    text-align: center;
-  }
-
-  #menu.productos {
-    position: relative;
-    top: auto;
-    left: 0;
-    transform: none;
-    width: 100vw;
-    margin-top: 15px;
-    border-radius: 12px;
-    max-width: 100vw;
-    flex-direction: column;
-    min-height: auto;
-  }
-  #menu.productos a {
-    padding: 10px;
-    font-size: 12px;
-    text-align: center;
-  }
-
-  .pixel-icons {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .welcome-text {
-    font-size: 14px;
-  }
-
-  .subtitle {
-    font-size: 10px;
+  .sugerencia-header-item {
+    padding: 8px 12px;
+    font-size: 13px;
   }
 }

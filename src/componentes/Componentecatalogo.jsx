@@ -22,7 +22,7 @@ export default function ComponenteCatalogo({ onNavegar, plataforma = "PS5" }) {
 
       <div className="contenedor-principal">
         <div className="columna-juegos">
-          <CardJuego limite={5} plataforma={plataforma} />
+          <CardJuego limite={5} plataforma={plataforma} onNavegar={onNavegar} />
         </div>
 
         <div className="columna-botones">

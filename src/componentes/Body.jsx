@@ -2,9 +2,19 @@ import React from "react";
 import ComponenteCatalogo from "./Componentecatalogo";
 import CatalogoCompleto from "./CatalogoCompleto";
 import ComponentePanelLogin from "./ComponentepanelLogin";
+import JuegoCompleto from "./JuegoCompleto";
+import ComponenteBusqueda from "./ComponenteBuscador";
 import "../estilos/Body.css";
+import { CarritoIcono } from "../carrito/CarritoIcono";
 
-export default function Body({ paginaActual, consola, categoria, onNavegar }) {
+export default function Body({
+  paginaActual,
+  consola,
+  categoria,
+  juego,
+  terminoBusqueda,
+  onNavegar,
+}) {
   const renderizarContenido = () => {
     switch (paginaActual) {
       case "inicio":
@@ -37,9 +47,40 @@ export default function Body({ paginaActual, consola, categoria, onNavegar }) {
       case "catalogo":
         return (
           <section className="seccion-catalogo">
-            <CatalogoCompleto consola={consola} categoria={categoria} />
+            <CatalogoCompleto
+              consola={consola}
+              categoria={categoria}
+              onNavegar={onNavegar}
+            />
           </section>
         );
+
+      case "juego":
+        return (
+          <section className="seccion-catalogo">
+            <JuegoCompleto
+              juego={juego}
+              onVolver={() => {
+                if (!consola || !categoria) {
+                  onNavegar("inicio");
+                } else {
+                  onNavegar("catalogo", consola, categoria);
+                }
+              }}
+            />
+          </section>
+        );
+
+      case "busqueda":
+        return (
+          <section className="seccion-catalogo">
+            <ComponenteBusqueda
+              terminoBusqueda={terminoBusqueda}
+              onNavegar={onNavegar}
+            />
+          </section>
+        );
+
       case "login":
         return <ComponentePanelLogin />;
 
@@ -52,5 +93,10 @@ export default function Body({ paginaActual, consola, categoria, onNavegar }) {
     }
   };
 
-  return <main className="body-container">{renderizarContenido()}</main>;
+  return (
+    <main className="body-container">
+      {renderizarContenido()}
+      <CarritoIcono />
+    </main>
+  );
 }

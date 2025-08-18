@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
+import JuegoCompleto from "./JuegoCompleto";
 import juegosPs5 from "../juegos/juegosPs5";
 import juegosPs4 from "../juegos/juegosPs4";
 import juegosPs3 from "../juegos/juegosPs3";
@@ -8,79 +10,51 @@ import juegosSwitch from "../juegos/juegosSwitch";
 import juegosSwitch2 from "../juegos/juegosSwitch2";
 import accesoriosPs5 from "../accesorios/accesoriosPs5";
 import accesoriosPs4 from "../accesorios/accesoriosPs4";
-
+import { useCarrito } from "../carrito/CarritoContext";
 import "../estilos/CardJuegoCompleto.css";
 
 export default function CardJuegoCompleto({
   consola = "PS5",
   categoria = "juegos",
+  onNavegar,
 }) {
+  const { agregarAlCarrito } = useCarrito();
+  const [paginaActual, setPaginaActual] = useState(1);
+  const itemsPorPagina = 10;
+
+  const formatearPrecio = (precio) => {
+    return precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  };
+
+  const mostrarJuegoCompleto = (juego) => {
+    const root = ReactDOM.createRoot(document.body);
+    root.render(<JuegoCompleto juego={juego} />);
+  };
+
   const obtenerDatos = () => {
     const clave = `${consola}_${categoria}`;
-
-    console.log("Buscando datos para:", clave);
-
     switch (clave) {
       case "PS5_juegos":
         return juegosPs5;
       case "PS5_accesorios":
         return accesoriosPs5;
-      case "PS5_consolas":
-        return [];
-
       case "PS4_juegos":
         return juegosPs4;
       case "PS4_accesorios":
         return accesoriosPs4;
-      case "PS4_consolas":
-        return [];
-
       case "PS3_juegos":
         return juegosPs3;
-      case "PS3_accesorios":
-        return [];
-      case "PS3_consolas":
-        return [];
-
       case "XONE_juegos":
         return juegosXone;
-      case "XONE_accesorios":
-        return [];
-      case "XONE_consolas":
-        return [];
-
       case "X360_juegos":
         return juegosX360;
-      case "X360_accesorios":
-        return [];
-      case "X360_consolas":
-        return [];
-
       case "SWITCH_juegos":
         return juegosSwitch;
-      case "SWITCH_accesorios":
-        return [];
-      case "SWITCH_consolas":
-        return [];
-
       case "SWITCH2_juegos":
         return juegosSwitch2;
-      case "SWITCH2_accesorios":
-        return [];
-      case "SWITCH2_consolas":
-        return [];
-
       case "OTROS_accesorios":
-        return accesoriosPs4, accesoriosPs5;
-      case "OTROS_mandos":
-        return [];
-      case "OTROS_consolas":
-        return [];
-      case "OTROS_otros":
-        return [];
-
+        return [...accesoriosPs4, ...accesoriosPs5];
       default:
-        console.log("Clave no encontrada:", clave);
         return [];
     }
   };
@@ -113,45 +87,123 @@ export default function CardJuegoCompleto({
     );
   }
 
+  const totalPaginas = Math.ceil(datos.length / itemsPorPagina);
+  const indiceInicio = (paginaActual - 1) * itemsPorPagina;
+  const indiceFin = indiceInicio + itemsPorPagina;
+  const datosActuales = datos.slice(indiceInicio, indiceFin);
+
+  const irAPagina = (pagina) => {
+    setPaginaActual(pagina);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const paginaAnterior = () => {
+    if (paginaActual > 1) {
+      irAPagina(paginaActual - 1);
+    }
+  };
+
+  const paginaSiguiente = () => {
+    if (paginaActual < totalPaginas) {
+      irAPagina(paginaActual + 1);
+    }
+  };
+
   return (
-    <div className="lista-juegos-compacta">
-      {datos.map((item) => (
-        <div key={item.id} className="card-juego-compact">
-          <div className="imagen-container-compact">
-            <img
-              src={item.imagen}
-              alt={item.titulo}
-              className="imagen-juego-compact"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = "/img/placeholder.jpg";
-              }}
-            />
+    <div className="catalogo-con-paginacion">
+      <div className="lista-juegos-compacta">
+        {datosActuales.map((item) => (
+          <div
+            key={item.id}
+            className="card-juego-compact"
+            onClick={() => onNavegar("juego", consola, categoria, item)}
+            style={{ cursor: "pointer" }}
+          >
+            <div className="imagen-container-compact">
+              <img
+                src={item.imagen}
+                alt={item.titulo}
+                className="imagen-juego-compact"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "/img/placeholder.jpg";
+                }}
+              />
+            </div>
+
+            <div className="info-container-compact">
+              <div className="plataforma-compact">
+                {formatearNombreConsola(consola)}
+              </div>
+              <h3 className="titulo-juego-compact">{item.titulo}</h3>
+
+              <div className="fila-inferior-compact">
+                <div className="clasificacion-compact">
+                  CLASIFICACIÓN PENDIENTE
+                </div>
+                <div className="precio-boton-container">
+                  <div className="precio-compact">
+                    ${formatearPrecio(item.precio)}
+                  </div>
+                  <button
+                    className="btn-comprar-compact"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      agregarAlCarrito(item);
+                    }}
+                  >
+                    AGREGAR AL CARRITO
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {totalPaginas > 1 && (
+        <div className="paginacion-container">
+          <div className="paginacion-info">
+            Mostrando {indiceInicio + 1}-{Math.min(indiceFin, datos.length)} de{" "}
+            {datos.length} productos
           </div>
 
-          <div className="info-container-compact">
-            <div className="plataforma-compact">
-              {formatearNombreConsola(consola)}
-            </div>
-            <h3 className="titulo-juego-compact">{item.titulo}</h3>
+          <div className="paginacion-controles">
+            <button
+              className="btn-paginacion"
+              onClick={paginaAnterior}
+              disabled={paginaActual === 1}
+            >
+              ← Anterior
+            </button>
 
-            <div className="fila-inferior-compact">
-              <div className="clasificacion-compact">
-                CLASIFICACIÓN PENDIENTE
-              </div>
-              <div className="precio-boton-container">
-                <div className="precio-compact">
-                  ${item.precio.toLocaleString()}
-                </div>
-                <button className="btn-comprar-compact">
-                  {" "}
-                  AGREGAR AL CARRITO
+            <div className="numeros-pagina">
+              {Array.from(
+                { length: totalPaginas },
+                (_, index) => index + 1
+              ).map((numeroPagina) => (
+                <button
+                  key={numeroPagina}
+                  className={`btn-numero-pagina ${
+                    numeroPagina === paginaActual ? "activa" : ""
+                  }`}
+                  onClick={() => irAPagina(numeroPagina)}
+                >
+                  {numeroPagina}
                 </button>
-              </div>
+              ))}
             </div>
+
+            <button
+              className="btn-paginacion"
+              onClick={paginaSiguiente}
+              disabled={paginaActual === totalPaginas}
+            >
+              Siguiente →
+            </button>
           </div>
         </div>
-      ))}
+      )}
     </div>
   );
 }
