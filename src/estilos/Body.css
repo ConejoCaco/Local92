@@ -1,11 +1,11 @@
 .body-container {
   min-height: 100vh;
   background-color: #333;
-  padding: 20px 0;
+  padding: 1.25rem 0;
 }
 
 .seccion-catalogo {
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .seccion-catalogo:last-child {

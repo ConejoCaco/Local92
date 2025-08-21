@@ -1,25 +1,25 @@
 .juego-completo-container {
   background-color: #333;
   min-height: 100vh;
-  padding: 40px 20px 20px 20px;
+  padding: 2.5rem 1.25rem 1.25rem 1.25rem;
   font-family: "Play", sans-serif;
   color: #fff;
-  max-width: 1000px;
+  max-width: 62.5rem;
   margin: 0 auto;
 }
 
 .titulo-con-volver {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 0.9375rem;
 }
 
 .btn-volver {
   background: transparent !important;
-  border: 2px solid #f8a600 !important;
+  border: 0.125rem solid #f8a600 !important;
   color: #f8a600 !important;
-  padding: 6px 14px !important;
-  border-radius: 6px !important;
+  padding: 0.375rem 0.875rem !important;
+  border-radius: 0.375rem !important;
   font-weight: 600 !important;
   text-transform: uppercase !important;
   font-size: 0.85em !important;
@@ -29,7 +29,7 @@
 .btn-volver:hover {
   background: #f8a600 !important;
   color: #222 !important;
-  transform: translateY(-2px) !important;
+  transform: translateY(-0.125rem) !important;
 }
 
 /* Título */
@@ -42,21 +42,21 @@
 
 /* Layout */
 .contenido-principal {
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 .portada-info {
   display: flex;
-  gap: 30px;
+  gap: 1.875rem;
   flex-wrap: wrap;
 }
 
 /* Imagen */
 .portada-imagen {
-  width: 300px;
-  border-radius: 8px;
-  border: 2px solid #3a3a3a;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  width: 18.75rem;
+  border-radius: 0.5rem;
+  border: 0.125rem solid #3a3a3a;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
 }
 .portada-imagen:hover {
@@ -67,18 +67,18 @@
 /* Clasificación */
 .clasificacion-box {
   background: rgba(20, 20, 20, 0.9);
-  border: 2px solid #f8a600;
-  padding: 7px;
+  border: 0.125rem solid #f8a600;
+  padding: 0.4375rem;
   text-align: center;
-  width: 300px;
-  border-radius: 6px;
-  margin-top: 15px;
+  width: 18.75rem;
+  border-radius: 0.375rem;
+  margin-top: 0.9375rem;
 }
 .clasificacion-label {
   display: block;
   font-size: 0.8rem;
   color: #ccc;
-  margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
 }
 .clasificacion-valor {
   font-weight: bold;
@@ -91,23 +91,23 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .precio-boton-inline {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 0.9375rem;
 }
 
 .precio-destacado {
   background: rgba(20, 20, 20, 0.9);
-  border: 2px solid #f8a600;
+  border: 0.125rem solid #f8a600;
   color: #f8a600;
   font-size: 1.4rem;
   font-weight: bold;
-  padding: 5px 20px;
-  border-radius: 6px;
+  padding: 0.3125rem 1.25rem;
+  border-radius: 0.375rem;
 }
 
 /* Botón Agregar */
@@ -115,8 +115,8 @@
   background: linear-gradient(135deg, #f8a600, #ff9500);
   color: #222;
   border: none;
-  padding: 10px 18px;
-  border-radius: 8px;
+  padding: 0.625rem 1.125rem;
+  border-radius: 0.5rem;
   font-weight: 700;
   font-size: 1rem;
   text-transform: uppercase;
@@ -125,7 +125,7 @@
 }
 .btn-agregar-carrito:hover:not(:disabled) {
   background: linear-gradient(135deg, #ff9500, #f8a600);
-  transform: translateY(-2px);
+  transform: translateY(-0.125rem);
 }
 .btn-agregar-carrito:disabled {
   opacity: 0.5;
@@ -138,19 +138,19 @@
   width: 100%;
 }
 .video-section iframe {
-  border-radius: 8px;
-  border: 2px solid #3a3a3a;
+  border-radius: 0.5rem;
+  border: 0.125rem solid #3a3a3a;
   width: 100%;
-  max-width: 560px;
-  height: 315px;
+  max-width: 35rem;
+  height: 19.6875rem;
 }
 
 /* Descripción */
 .descripcion-section {
   background: rgba(42, 42, 42, 0.8);
-  border-radius: 10px;
-  padding: 20px;
-  border: 1px solid #3a3a3a;
+  border-radius: 0.625rem;
+  padding: 1.25rem;
+  border: 0.0625rem solid #3a3a3a;
 }
 .descripcion-section p {
   margin: 0;

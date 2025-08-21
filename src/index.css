@@ -1,0 +1,268 @@
+/* ===== RESPONSIVE PARA CELULARES Y TABLETS ===== */
+@media (max-width: 1024px) {
+  /* HEADER - Logo y redes sociales */
+  #nav {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 1rem !important;
+    gap: 0.5rem !important;
+  }
+
+  .logo {
+    order: 1 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .logo img {
+    height: 3.5rem !important;
+  }
+
+  .social {
+    order: 2 !important;
+    margin-bottom: 0.5rem !important;
+    text-align: center !important;
+  }
+
+  .social ul {
+    justify-content: center !important;
+  }
+
+  /* BUSCADOR - Entre header y menú */
+  .buscadorTop {
+    order: 3 !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    margin: 0.5rem auto !important;
+  }
+
+  /* MENÚ - Debajo del buscador */
+  #menu.productos {
+    order: 4 !important;
+    width: 100vw !important;
+    min-height: 3.5rem !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    position: static !important;
+    margin-left: 100% !important;
+  }
+
+  #menu.productos li {
+    margin: 0.3rem !important;
+  }
+
+  #menu.productos a {
+    padding: 0.7rem 1rem !important;
+    font-size: 0.7rem !important;
+    min-height: 2.2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* CONTENIDO - Debajo del menú */
+  .body-container {
+    order: 5 !important;
+    margin-top: 1rem !important;
+  }
+
+  /* Catalogo responsive */
+  .catalogo-container {
+    width: 100% !important;
+    padding: 0 1rem !important;
+  }
+
+  .contenedor-principal {
+    flex-direction: column !important;
+  }
+
+  .columna-juegos {
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.8rem !important;
+  }
+
+  .columna-botones {
+    width: 100% !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Footer responsive */
+  .gameboy-footer {
+    padding: 1.5rem 0 !important;
+    order: 6 !important;
+  }
+}
+
+/* ===== AJUSTES ESPECÍFICOS PARA CELULARES (0-576px) ===== */
+@media (max-width: 575.98px) {
+  html,
+  body {
+    zoom: 0.8;
+    overflow-x: hidden !important;
+  }
+
+  .container-fluid {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    overflow-x: hidden !important;
+  }
+
+  #menu.productos {
+    flex-wrap: wrap !important;
+    height: auto !important;
+    width: 140vw !important;
+    max-width: 130vw !important;
+    min-height: 4rem !important;
+    position: relative !important;
+    transform: translateX(-113%) !important;
+    justify-content: center !important;
+  }
+
+  #menu.productos a {
+    padding: 0.6rem 0.8rem !important;
+    font-size: 0.65rem !important;
+    min-height: 2rem !important;
+  }
+
+  .card-juego {
+    width: calc(50% - 0.5rem) !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .d-pad {
+    transform: translateX(-0.5rem) scale(0.8) !important;
+  }
+
+  .buttons {
+    transform: translateX(1rem) scale(0.8) !important;
+  }
+
+  .footer-content {
+    transform: translateX(0.5rem) !important;
+  }
+}
+
+/* ===== AJUSTES ESPECÍFICOS PARA TABLETS (576px-1024px) ===== */
+@media (min-width: 576px) and (max-width: 1024px) {
+  #menu.productos {
+    width: 200vw !important;
+    max-width: 95vw !important;
+    padding: 0.4rem !important;
+    flex-wrap: wrap !important;
+    height: auto !important;
+    transform: translateX(-50%) !important;
+    justify-content: center !important;
+  }
+
+  #menu.productos a {
+    padding: 0.7rem 1rem !important;
+    font-size: 0.75rem !important;
+    min-height: 2.3rem !important;
+  }
+
+  .card-juego {
+    width: calc(33.333% - 0.8rem) !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+  .juego-imagen {
+    width: 110px !important;
+    height: 140px !important;
+  }
+
+  .juego-titulo {
+    font-size: 0.95em !important;
+  }
+
+  .juego-precio {
+    font-size: 1.1rem !important;
+  }
+
+  .d-pad {
+    transform: translateX(-0.3rem) scale(0.9) !important;
+  }
+
+  .buttons {
+    transform: translateX(1.2rem) scale(0.9) !important;
+  }
+
+  .footer-content {
+    transform: translateX(0.8rem) !important;
+  }
+}
+
+/* ===== AJUSTES PARA IPHONE CON NOTCH ===== */
+@supports (padding: max(0px)) {
+  @media (max-width: 575.98px) {
+    .container-fluid {
+      padding-left: max(0.5rem, env(safe-area-inset-left)) !important;
+      padding-right: max(0.5rem, env(safe-area-inset-right)) !important;
+    }
+
+    #nav {
+      padding-top: max(0.5rem, env(safe-area-inset-top)) !important;
+      padding-left: max(1rem, env(safe-area-inset-left)) !important;
+      padding-right: max(1rem, env(safe-area-inset-right)) !important;
+    }
+
+    .buscadorTop {
+      min-height: 44px !important;
+    }
+
+    .inputBuscador {
+      font-size: 16px !important;
+    }
+
+    .gameboy-footer {
+      padding-bottom: max(1rem, env(safe-area-inset-bottom)) !important;
+    }
+  }
+}
+
+/* Asegurar que el viewport funcione correctamente */
+@viewport {
+  width: device-width;
+  zoom: 1;
+  min-zoom: 0.8;
+  max-zoom: 1.2;
+  user-zoom: fixed;
+}
+
+/* ===== EVITAR NAVEGACIÓN EN MENÚ PRINCIPAL ===== */
+#menu.productos > li > a {
+  pointer-events: none; /* Deshabilita clics */
+  cursor: default; /* Cursor normal */
+}
+
+/* Permitir clics solo en los dropdowns */
+#menu.productos .dropdown a {
+  pointer-events: auto; /* Habilita clics */
+  cursor: pointer; /* Cursor de mano */
+}
+
+/* Ocultar dropdowns por defecto */
+.dropdown {
+  display: none;
+}
+
+/* Mostrar dropdown solo cuando está activo */
+#menu.productos li.active .dropdown {
+  display: block;
+}
+
+/* Para desktop: hover */
+@media (min-width: 1025px) {
+  #menu.productos li:hover .dropdown {
+    display: block;
+  }
+
+  /* Opcional: permitir clics en desktop si prefieres */
+  #menu.productos > li > a {
+    pointer-events: auto;
+    cursor: pointer;
+  }
+}

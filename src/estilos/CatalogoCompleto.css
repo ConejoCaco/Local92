@@ -1,7 +1,7 @@
 .catalogo-completo-container {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 0 20px;
+  max-width: 56.25rem;
+  margin: 3.125rem auto;
+  padding: 0 1.25rem;
 }
 
 .catalogo-completo-title {
@@ -9,9 +9,9 @@
   font-size: 1.5em;
   font-weight: 700;
   color: #f8a600;
-  margin-bottom: 25px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #f8a600;
+  margin-bottom: 1.5625rem;
+  padding-bottom: 0.625rem;
+  border-bottom: 0.125rem solid #f8a600;
   text-transform: uppercase;
 }
 
@@ -21,7 +21,7 @@
 
 .sin-productos {
   text-align: center;
-  padding: 60px 20px;
+  padding: 3.75rem 1.25rem;
   color: #ccc;
 }
 
@@ -29,7 +29,7 @@
   font-family: "Play", sans-serif;
   font-size: 1.2em;
   color: #f8a600;
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
 }
 
 .sin-productos p {
