@@ -29,7 +29,7 @@ const juegosPs5 = [
     id: 1,
     titulo: "Elden Ring Nightreign",
     precio: 29900,
-    stock: 15,
+    stock: 0,
     imagen: eldenRing,
     descripcion: `Elden Ring: Nightreign es una expansión independiente ambientada en el oscuro y vasto mundo creado por FromSoftware. 
   Este capítulo lleva la fórmula soulslike a nuevas alturas, con un mapa inédito repleto de secretos, jefes colosales y una narrativa envuelta 

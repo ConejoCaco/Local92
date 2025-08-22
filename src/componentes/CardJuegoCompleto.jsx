@@ -31,6 +31,10 @@ export default function CardJuegoCompleto({
     root.render(<JuegoCompleto juego={juego} />);
   };
 
+  const estaAgotado = (item) => {
+    return !item.stock || item.stock === 0;
+  };
+
   const obtenerDatos = () => {
     const clave = `${consola}_${categoria}`;
     switch (clave) {
@@ -112,53 +116,67 @@ export default function CardJuegoCompleto({
   return (
     <div className="catalogo-con-paginacion">
       <div className="lista-juegos-compacta">
-        {datosActuales.map((item) => (
-          <div
-            key={item.id}
-            className="card-juego-compact"
-            onClick={() => onNavegar("juego", consola, categoria, item)}
-            style={{ cursor: "pointer" }}
-          >
-            <div className="imagen-container-compact">
-              <img
-                src={item.imagen}
-                alt={item.titulo}
-                className="imagen-juego-compact"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = "/img/placeholder.jpg";
-                }}
-              />
-            </div>
+        {datosActuales.map((item) => {
+          const agotado = estaAgotado(item);
 
-            <div className="info-container-compact">
-              <div className="plataforma-compact">
-                {formatearNombreConsola(consola)}
-              </div>
-              <h3 className="titulo-juego-compact">{item.titulo}</h3>
-
-              <div className="fila-inferior-compact">
-                <div className="clasificacion-compact">
-                  CLASIFICACIÓN PENDIENTE
-                </div>
-                <div className="precio-boton-container">
-                  <div className="precio-compact">
-                    ${formatearPrecio(item.precio)}
+          return (
+            <div
+              key={item.id}
+              className={`card-juego-compact ${agotado ? "agotado" : ""}`}
+              onClick={() => onNavegar("juego", consola, categoria, item)}
+              style={{ cursor: "pointer" }}
+            >
+              <div className="imagen-container-compact">
+                <img
+                  src={item.imagen}
+                  alt={item.titulo}
+                  className="imagen-juego-compact"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "/img/placeholder.jpg";
+                  }}
+                />
+                {agotado && (
+                  <div className="overlay-agotado">
+                    <span className="texto-agotado">AGOTADO</span>
                   </div>
-                  <button
-                    className="btn-comprar-compact"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      agregarAlCarrito(item);
-                    }}
-                  >
-                    AGREGAR AL CARRITO
-                  </button>
+                )}
+              </div>
+
+              <div className="info-container-compact">
+                <div className="plataforma-compact">
+                  {formatearNombreConsola(consola)}
+                </div>
+                <h3 className="titulo-juego-compact">{item.titulo}</h3>
+
+                <div className="fila-inferior-compact">
+                  <div className="clasificacion-compact">
+                    CLASIFICACIÓN PENDIENTE
+                  </div>
+                  <div className="precio-boton-container">
+                    <div className="precio-compact">
+                      ${formatearPrecio(item.precio)}
+                    </div>
+                    <button
+                      className={`btn-comprar-compact ${
+                        agotado ? "deshabilitado" : ""
+                      }`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (!agotado) {
+                          agregarAlCarrito(item);
+                        }
+                      }}
+                      disabled={agotado}
+                    >
+                      {agotado ? "AGOTADO" : "AGREGAR AL CARRITO"}
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {totalPaginas > 1 && (
