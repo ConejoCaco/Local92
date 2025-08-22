@@ -29,6 +29,10 @@ export default function CardJuego({ limite, plataforma = "PS5", onNavegar }) {
     root.render(<JuegoCompleto juego={juego} />);
   };
 
+  const estaAgotado = (juego) => {
+    return !juego.stock || juego.stock === 0;
+  };
+
   let juegos =
     limite && todosLosJuegos.length > 0
       ? todosLosJuegos.slice(0, limite)
@@ -44,33 +48,46 @@ export default function CardJuego({ limite, plataforma = "PS5", onNavegar }) {
 
   return (
     <div className="grid-juegos">
-      {juegos.map((juego) => (
-        <div
-          key={juego.id}
-          className="card-juego"
-          onClick={() => onNavegar("juego", plataforma, null, juego)}
-          style={{ cursor: "pointer" }}
-        >
-          <div className="juego-imagen">
-            <img
-              src={juego.imagen}
-              alt={juego.titulo}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                borderRadius: "4px",
-              }}
-            />
-            <div className="placeholder-imagen"></div>
+      {juegos.map((juego) => {
+        const agotado = estaAgotado(juego);
+
+        return (
+          <div
+            key={juego.id}
+            className={`card-juego ${agotado ? "agotado" : ""}`}
+            onClick={() => onNavegar("juego", plataforma, null, juego)}
+            style={{ cursor: "pointer" }}
+          >
+            <div className="juego-imagen">
+              <img
+                src={juego.imagen}
+                alt={juego.titulo}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  borderRadius: "4px",
+                }}
+              />
+              {agotado && (
+                <div className="overlay-agotado-grid">
+                  <span className="texto-agotado-grid">AGOTADO</span>
+                </div>
+              )}
+              <div className="placeholder-imagen"></div>
+            </div>
+            <div className="juego-titulo">{juego.titulo}</div>
+            <div className={`juego-precio ${agotado ? "precio-agotado" : ""}`}>
+              ${juego.precio.toLocaleString()}
+            </div>
+            {juego.stock !== undefined && (
+              <div className={`juego-stock ${agotado ? "stock-agotado" : ""}`}>
+                {agotado ? "Sin stock" : `Stock: ${juego.stock}`}
+              </div>
+            )}
           </div>
-          <div className="juego-titulo">{juego.titulo}</div>
-          <div className="juego-precio">${juego.precio.toLocaleString()}</div>
-          {juego.stock && (
-            <div className="juego-stock">Stock: {juego.stock}</div>
-          )}
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }

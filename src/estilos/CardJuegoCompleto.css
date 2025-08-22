@@ -213,3 +213,56 @@
   font-size: 0.85em;
   color: #999;
 }
+
+.card-juego-compact.agotado {
+  opacity: 0.7;
+  position: relative;
+}
+
+.imagen-container-compact {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay-agotado {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.texto-agotado {
+  color: #ff4444;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 2px;
+}
+
+.btn-comprar-compact.deshabilitado {
+  background-color: #666;
+  color: #ccc;
+  cursor: not-allowed;
+  border-color: #666;
+}
+
+.btn-comprar-compact.deshabilitado:hover {
+  background-color: #666;
+  color: #ccc;
+  transform: none;
+}
+
+.card-juego-compact.agotado .precio-compact {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.card-juego-compact.agotado .titulo-juego-compact {
+  color: #888;
+}
