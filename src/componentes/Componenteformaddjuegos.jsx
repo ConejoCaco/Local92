@@ -32,6 +32,18 @@ export default function Componenteformaddjuegos() {
       });
       const data = await res.json();
       alert(data.message);
+      if (data.message === "Juego agregado correctamente") {
+        // Reset form fields
+        setTitulo("");
+        setPrecio("");
+        setStock("");
+        setClasificacion("0");
+        setDescripcion("");
+        setVideo("");
+        setFecha("");
+        setConsola("otros");
+        setImagen(null);
+      }
     } catch (err) {
       console.error(err);
       alert("Error al enviar datos");
@@ -45,27 +57,62 @@ export default function Componenteformaddjuegos() {
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label className="form-label">Nombre del Juego</label>
-            <input type="text" className="form-control" value={titulo} onChange={(e) => setTitulo(e.target.value)} required />
+            <input 
+              type="text" 
+              className="form-control" 
+              value={titulo} 
+              onChange={(e) => setTitulo(e.target.value)} 
+              required 
+            />
           </div>
           <div className="mb-3">
             <label className="form-label">Precio</label>
-            <input type="number" className="form-control" value={precio} onChange={(e) => setPrecio(e.target.value)} required />
+            <input 
+              type="number" 
+              className="form-control" 
+              min="0"
+              value={precio} 
+              onChange={(e) => setPrecio(e.target.value)} 
+              required 
+            />
           </div>
           <div className="mb-3">
             <label className="form-label">Imagen</label>
-            <input type="file" className="form-control" accept="image/*" onChange={(e) => setImagen(e.target.files[0])} required />
+            <input 
+              type="file" 
+              className="form-control" 
+              accept="image/*" 
+              onChange={(e) => setImagen(e.target.files[0])} 
+              required 
+            />
           </div>
           <div className="mb-3">
             <label className="form-label">Fecha de Lanzamiento</label>
-            <input type="date" className="form-control" value={fecha} onChange={(e) => setFecha(e.target.value)} />
+            <input 
+              type="date" 
+              className="form-control" 
+              value={fecha} 
+              onChange={(e) => setFecha(e.target.value)} 
+            />
           </div>
           <div className="mb-3">
             <label className="form-label">Existencias</label>
-            <input type="number" className="form-control" value={stock} onChange={(e) => setStock(e.target.value)} required />
+            <input 
+              type="number" 
+              className="form-control" 
+              min="0"
+              value={stock} 
+              onChange={(e) => setStock(e.target.value)} 
+              required 
+            />
           </div>
           <div className="mb-3">
             <label className="form-label">Clasificación por edad</label>
-            <select className="form-select" value={clasificacion} onChange={(e) => setClasificacion(e.target.value)}>
+            <select 
+              className="form-select" 
+              value={clasificacion} 
+              onChange={(e) => setClasificacion(e.target.value)}
+            >
               <option value="0">Para todos</option>
               <option value="1">+7</option>
               <option value="2">+12</option>
@@ -75,15 +122,40 @@ export default function Componenteformaddjuegos() {
           </div>
           <div className="mb-3">
             <label className="form-label">Descripción</label>
-            <textarea className="form-control" rows="3" value={descripcion} onChange={(e) => setDescripcion(e.target.value)} required></textarea>
+            <textarea 
+              className="form-control" 
+              rows="3" 
+              value={descripcion} 
+              onChange={(e) => setDescripcion(e.target.value)} 
+              required
+            ></textarea>
           </div>
           <div className="mb-3">
             <label className="form-label">Link de video</label>
-            <input type="url" className="form-control" value={video} onChange={(e) => setVideo(e.target.value)} required />
+            <input 
+              type="url" 
+              className="form-control" 
+              value={video} 
+              onChange={(e) => setVideo(e.target.value)} 
+              required 
+            />
           </div>
           <div className="mb-3">
             <label className="form-label">Consola</label>
-            <input type="text" className="form-control" value={consola} onChange={(e) => setConsola(e.target.value)} />
+            <select 
+              className="form-select" 
+              value={consola} 
+              onChange={(e) => setConsola(e.target.value)}
+            >
+              <option value="otros">Otros</option>
+              <option value="ps5">PS5</option>
+              <option value="ps4">PS4</option>
+              <option value="ps3">PS3</option>
+              <option value="xbox_one">Xbox One</option>
+              <option value="xbox_360">Xbox 360</option>
+              <option value="switch">Switch</option>
+              <option value="switch2">Switch 2</option>
+            </select>
           </div>
           <button type="submit" className="btn btn-primary w-100">Añadir Juego</button>
         </form>
