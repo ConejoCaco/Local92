@@ -52,6 +52,7 @@ function App() {
         <Footer />
       </Router>
     </CarritoProvider>
+    
   );
 }
 
