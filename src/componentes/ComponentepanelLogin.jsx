@@ -14,31 +14,13 @@ export default function ComponentepanelLogin() {
   const [opcion, setOpcion] = useState("addJuegos");
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setError("");
-
-    try {
-      const formData = new FormData();
-      formData.append("username", usuario);
-      formData.append("password", password);
-
-      // ajusta la url según dónde tengas tu login.php
-      const response = await fetch("http://localhost/backend/login.php", {
-        method: "POST",
-        body: formData,
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setAutenticado(true);
-        setError("");
-      } else {
-        setError(data.message || "Credenciales incorrectas");
-      }
-    } catch (err) {
-      setError("Error de conexión con el servidor");
+    if (usuario === "admin" && password === "admin") {
+      setAutenticado(true);
+      setError("");
+    } else {
+      setError("Usuario o contraseña incorrectos");
     }
   };
 
@@ -49,6 +31,7 @@ export default function ComponentepanelLogin() {
     setOpcion("addJuegos");
     navigate("/");
   };
+
 
   if (autenticado) {
     let contenido;
@@ -71,15 +54,15 @@ export default function ComponentepanelLogin() {
 
     return (
       <div>
-        <HeaderAdmin onSeleccion={setOpcion} onCerrarSesion={cerrarSesion} />
+        <HeaderAdmin onSeleccion={setOpcion}  onCerrarSesion={cerrarSesion}/>
         <div className="admin-content">{contenido}</div>
       </div>
     );
   }
 
   return (
-    <div className="container dashboard-login d-flex justify-content-center align-items-center">
-      <div className="card p-4 shadow pixel-card" style={{ width: "500px" }}>
+    <div className='container dashboard-login d-flex justify-content-center align-items-center'>
+      <div className='card p-4 shadow pixel-card' style={{ width: '500px' }}>
         <h2>Iniciar Sesión</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -89,7 +72,7 @@ export default function ComponentepanelLogin() {
               id="username"
               className="form-control"
               value={usuario}
-              onChange={(e) => setUsuario(e.target.value)}
+              onChange={e => setUsuario(e.target.value)}
               placeholder="Ingresa tu usuario"
             />
           </div>
@@ -100,14 +83,12 @@ export default function ComponentepanelLogin() {
               id="password"
               className="form-control"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={e => setPassword(e.target.value)}
               placeholder="Ingresa tu contraseña"
             />
           </div>
           {error && <div className="text-danger mb-2">{error}</div>}
-          <button type="submit" className="btn btn-primary">
-            Iniciar Sesión
-          </button>
+          <button type="submit" className="btn btn-primary">Iniciar Sesión</button>
         </form>
       </div>
     </div>
