@@ -1,0 +1,307 @@
+.catalogo-completo-container {
+  max-width: 56.25rem;
+  margin: 3.125rem auto;
+  padding: 0 1.25rem;
+}
+
+.catalogo-completo-title {
+  font-family: "Play", sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #f8a600;
+  margin-bottom: 1.5625rem;
+  padding-bottom: 0.625rem;
+  border-bottom: 0.125rem solid #f8a600;
+  text-transform: uppercase;
+}
+
+.sin-productos {
+  text-align: center;
+  padding: 3.75rem 1.25rem;
+  color: #ccc;
+}
+
+.sin-productos h3 {
+  font-family: "Play", sans-serif;
+  font-size: 1.2em;
+  color: #f8a600;
+  margin-bottom: 0.9375rem;
+}
+
+.sin-productos p {
+  font-family: "Play", sans-serif;
+  font-size: 0.9em;
+  color: #999;
+}
+
+.buscador-container {
+  margin-bottom: 1.875rem;
+  position: relative;
+}
+
+.buscador-input-container {
+  position: relative;
+  max-width: 31.25rem;
+  margin: 0 auto;
+}
+
+.buscador-input {
+  width: 100%;
+  padding: 0.9375rem 1.25rem 0.9375rem 3.125rem;
+  font-family: "Play", sans-serif;
+  font-size: 1rem;
+  background: #2a2a2a;
+  border: 0.125rem solid #3a3a3a;
+  border-radius: 1.5625rem;
+  color: #fff;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.buscador-input:focus {
+  border-color: #f8a600;
+  background: #333;
+  box-shadow: 0 0 0 0.1875rem rgba(248, 166, 0, 0.1);
+}
+
+.buscador-input::placeholder {
+  color: #888;
+}
+
+.buscador-icono {
+  position: absolute;
+  left: 1.125rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.sugerencias-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #2a2a2a;
+  border: 0.125rem solid #f8a600;
+  border-top: none;
+  border-radius: 0 0 0.9375rem 0.9375rem;
+  max-height: 12.5rem;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.3);
+}
+
+.sugerencia-item {
+  padding: 0.75rem 1.25rem 0.75rem 3.125rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: "Play", sans-serif;
+  color: #ccc;
+  border-bottom: 0.0625rem solid #3a3a3a;
+}
+
+.sugerencia-item:last-child {
+  border-bottom: none;
+}
+
+.sugerencia-item:hover,
+.sugerencia-item.seleccionada {
+  background: #f8a600;
+  color: #222;
+}
+
+.sugerencia-item svg {
+  flex-shrink: 0;
+}
+
+.contenedor-juegos-compacto {
+  width: 100%;
+}
+
+.grid-juegos-compacto {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
+  gap: 0.3125rem;
+  margin-bottom: 1.875rem;
+}
+
+.card-juego-compacto {
+  background: #2a2a2a;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 0.0625rem solid #3a3a3a;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 16rem;
+}
+
+.card-juego-compacto:hover {
+  border-color: #f8a600;
+  transform: translateY(-0.25rem);
+  box-shadow: 0 0.5rem 1.5625rem rgba(248, 166, 0, 0.2);
+}
+
+.imagen-juego-compacto {
+  width: 100%;
+  height: 18.75rem;
+  overflow: hidden;
+}
+
+.imagen-juego-compacto img {
+  width: 100%;
+  height: 100%;
+  object-fit: auto;
+  transition: transform 0.3s ease;
+}
+
+.card-juego-compacto:hover .imagen-juego-compacto img {
+  transform: scale(1.05);
+}
+
+.info-juego-compacto {
+  padding: 0.9375rem;
+}
+
+.plataforma-juego {
+  font-size: 0.8rem;
+  color: #f8a600;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03125rem;
+  margin-bottom: 0.5rem;
+  font-family: "Play", sans-serif;
+}
+
+.titulo-juego-compacto {
+  font-size: 1.1rem;
+  color: white;
+  margin: 0 0 0.9375rem 0;
+  line-height: 1.3;
+  height: 3.125rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-family: "Play", sans-serif;
+}
+
+.footer-juego-compacto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.precio-juego-compacto {
+  font-size: 1.3rem;
+  color: #f8a600;
+  font-weight: 700;
+  font-family: "Play", sans-serif;
+}
+
+.btn-agregar-compacto {
+  background: linear-gradient(135deg, #f8a600 0%, #ff9500 100%);
+  color: #222;
+  border: none;
+  padding: 0.125rem 0.25rem;
+  width: 8.125rem;
+  border-radius: 0.375rem;
+  font-family: "Play", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.btn-agregar-compacto:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0.25rem 0.75rem rgba(248, 166, 0, 0.4);
+}
+
+.paginacion-container {
+  margin-top: 2.5rem;
+  padding-top: 1.875rem;
+  border-top: 0.125rem solid #f8a600;
+}
+
+.paginacion-info {
+  font-family: "Play", sans-serif;
+  font-size: 0.9em;
+  color: #ccc;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.paginacion-controles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+}
+
+.btn-paginacion {
+  background: #2a2a2a;
+  border: 0.125rem solid #3a3a3a;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-family: "Play", sans-serif;
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.btn-paginacion:hover:not(:disabled) {
+  background: #f8a600;
+  color: #222;
+  border-color: #f8a600;
+  transform: translateY(-0.125rem);
+}
+
+.btn-paginacion:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.numeros-pagina {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0 0.9375rem;
+}
+
+.btn-numero-pagina {
+  background: #2a2a2a;
+  border: 0.125rem solid #3a3a3a;
+  color: #fff;
+  width: 2.8125rem;
+  height: 2.8125rem;
+  border-radius: 0.5rem;
+  font-family: "Play", sans-serif;
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-numero-pagina:hover {
+  background: #3a3a3a;
+  border-color: #f8a600;
+  transform: translateY(-0.125rem);
+}
+
+.btn-numero-pagina.activa {
+  background: #f8a600;
+  color: #222;
+  border-color: #f8a600;
+  font-weight: bold;
+  box-shadow: 0 0.25rem 0.75rem rgba(248, 166, 0, 0.3);
+}

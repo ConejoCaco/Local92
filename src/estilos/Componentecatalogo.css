@@ -1,0 +1,38 @@
+.catalogo-container {
+  width: 60rem;
+  margin: 3.125rem auto 0;
+  padding: 0.3125rem;
+}
+
+.catalogo-title {
+  font-family: "Play", sans-serif;
+  font-size: 0.9em;
+  font-weight: 700;
+  color: #f8a600;
+  margin: 0.3125rem 0 0.5rem;
+  padding-bottom: 0.1875rem;
+  border-bottom: 0.0625rem solid #f8a600;
+  letter-spacing: 0.0625rem;
+  text-align: left;
+}
+
+.contenedor-principal {
+  display: flex;
+}
+
+.columna-juegos {
+  width: 47.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+
+.card-juego {
+  width: calc(20% - 0.5rem);
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.columna-botones {
+  width: 12.5rem;
+}

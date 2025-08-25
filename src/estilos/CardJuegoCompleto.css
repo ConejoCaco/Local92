@@ -1,0 +1,268 @@
+.lista-juegos-compacta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
+  width: 100%;
+}
+
+.card-juego-compact {
+  display: flex;
+  gap: 0.9375rem;
+  background: #2a2a2a;
+  border-radius: 0.5rem;
+  padding: 0.9375rem;
+  border: 0.0625rem solid #3a3a3a;
+  height: 8.75rem;
+  min-width: 30rem;
+  transition: all 0.3s ease;
+}
+
+.card-juego-compact:hover {
+  border-color: #f8a600;
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.25rem 0.75rem rgba(248, 166, 0, 0.2);
+}
+
+.imagen-container-compact {
+  width: 5.625rem;
+  height: 6.875rem;
+  flex-shrink: 0;
+}
+
+.imagen-juego-compact {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.25rem;
+}
+
+.info-container-compact {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.plataforma-compact {
+  font-family: "Play", sans-serif;
+  font-size: 0.7em;
+  color: #f8a600;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03125rem;
+}
+
+.titulo-juego-compact {
+  font-family: "Play", sans-serif;
+  font-size: 0.95em;
+  color: white;
+  margin: 0.1875rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fila-inferior-compact {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.clasificacion-compact {
+  font-family: "Play", sans-serif;
+  font-size: 0.65em;
+  color: #aaa;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.1875rem 0.375rem;
+  border-radius: 0.1875rem;
+}
+
+.precio-boton-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.precio-compact {
+  font-family: "Play", sans-serif;
+  font-size: 1.1em;
+  color: #f8a600;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.btn-comprar-compact {
+  background: linear-gradient(135deg, #f8a600 0%, #ff9500 100%);
+  color: #222;
+  border: none;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  font-family: "Play", sans-serif;
+  font-size: 0.75em;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-comprar-compact:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0.125rem 0.5rem rgba(248, 166, 0, 0.3);
+}
+
+.catalogo-con-paginacion {
+  width: 100%;
+}
+
+.paginacion-container {
+  margin-top: 1.875rem;
+  padding: 1.25rem 0;
+  border-top: 0.0625rem solid #3a3a3a;
+}
+
+.paginacion-info {
+  font-family: "Play", sans-serif;
+  font-size: 0.9em;
+  color: #ccc;
+  text-align: center;
+  margin-bottom: 0.9375rem;
+}
+
+.paginacion-controles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+}
+
+.btn-paginacion {
+  background: #2a2a2a;
+  border: 0.0625rem solid #3a3a3a;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-family: "Play", sans-serif;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-paginacion:hover:not(:disabled) {
+  background: #f8a600;
+  color: #222;
+  border-color: #f8a600;
+}
+
+.btn-paginacion:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.numeros-pagina {
+  display: flex;
+  gap: 0.3125rem;
+  margin: 0 0.9375rem;
+}
+
+.btn-numero-pagina {
+  background: #2a2a2a;
+  border: 0.0625rem solid #3a3a3a;
+  color: #fff;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  font-family: "Play", sans-serif;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-numero-pagina:hover {
+  background: #3a3a3a;
+  border-color: #f8a600;
+}
+
+.btn-numero-pagina.activa {
+  background: #f8a600;
+  color: #222;
+  border-color: #f8a600;
+  font-weight: bold;
+}
+
+.sin-productos {
+  text-align: center;
+  padding: 2.5rem 1.25rem;
+  color: #ccc;
+}
+
+.sin-productos h3 {
+  font-family: "Play", sans-serif;
+  font-size: 1.1em;
+  color: #f8a600;
+  margin-bottom: 0.625rem;
+}
+
+.sin-productos p {
+  font-family: "Play", sans-serif;
+  font-size: 0.85em;
+  color: #999;
+}
+
+.card-juego-compact.agotado {
+  opacity: 0.7;
+  position: relative;
+}
+
+.imagen-container-compact {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay-agotado {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.texto-agotado {
+  color: #ff4444;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 2px;
+}
+
+.btn-comprar-compact.deshabilitado {
+  background-color: #666;
+  color: #ccc;
+  cursor: not-allowed;
+  border-color: #666;
+}
+
+.btn-comprar-compact.deshabilitado:hover {
+  background-color: #666;
+  color: #ccc;
+  transform: none;
+}
+
+.card-juego-compact.agotado .precio-compact {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.card-juego-compact.agotado .titulo-juego-compact {
+  color: #888;
+}

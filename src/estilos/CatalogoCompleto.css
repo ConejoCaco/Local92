@@ -1,0 +1,39 @@
+.catalogo-completo-container {
+  max-width: 56.25rem;
+  margin: 3.125rem auto;
+  padding: 0 1.25rem;
+}
+
+.catalogo-completo-title {
+  font-family: "Play", sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #f8a600;
+  margin-bottom: 1.5625rem;
+  padding-bottom: 0.625rem;
+  border-bottom: 0.125rem solid #f8a600;
+  text-transform: uppercase;
+}
+
+.contenedor-juegos-vertical {
+  width: 100%;
+}
+
+.sin-productos {
+  text-align: center;
+  padding: 3.75rem 1.25rem;
+  color: #ccc;
+}
+
+.sin-productos h3 {
+  font-family: "Play", sans-serif;
+  font-size: 1.2em;
+  color: #f8a600;
+  margin-bottom: 0.9375rem;
+}
+
+.sin-productos p {
+  font-family: "Play", sans-serif;
+  font-size: 0.9em;
+  color: #999;
+}
