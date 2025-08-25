@@ -4,6 +4,7 @@ import datotempClientes from '../juegos/datotempClientes.js';
 import ComponenteItemStock from './ComponenteitemStock.jsx';
 import ComponenteItemPedido from './ComponenteitemPedido.jsx';
 import "../estilos/ComponenteitemPedido.css";
+/*pendiente de borrar*/
 
 export default function Dashboardlistadoproductos({ tipo }) {
   const [items, setItems] = useState([]);
