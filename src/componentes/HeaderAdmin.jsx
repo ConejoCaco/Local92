@@ -14,7 +14,7 @@ export default function HeaderAdmin({ onSeleccion, onCerrarSesion }) {
       <div id="nav" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         {/* Logo */}
         <div className="logo">
-          <a href="#" style={{ cursor: "pointer" }}>
+          <a href="/" style={{ cursor: "pointer" }}>
             <img
               src="/img/pixil-frame-0.png"
               alt="Logo Local92"

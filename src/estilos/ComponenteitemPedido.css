@@ -9,29 +9,23 @@
     margin: 40px auto;
     /*font-family: 'Press Start 2P', cursive;*/
     font-family: "Play", sans-serif ;
-}
-
-.dashboard-container h2 {
-    color: #1e3a5f; 
-    margin-bottom: 20px;    
-}
-.container-dashboard {
-    background-color: #333;
-    max-width: 100%;
-}
-
-.title{
-    font-weight: bold;
     color: #1e3a5f;
+}
+
+.container-dashboard {
+    background-color: #1b5e20;
+    margin-bottom: 3em;
+    
+}
+
+
+.title {
+    font-weight: bold;
+    
     font-size: 25px;
     margin-right: 80px;
 }
-.title1{
-    font-weight: bold;
-    color: #1e3a5f;
-    font-size: 25px;
-    padding-left: 80px;
-}
+
 .pedido-item {
     display: flex;
     justify-content: space-between;
@@ -67,9 +61,7 @@
     color: #fff;
 }
 
-.span {
-    color: #333;
-}
+
 
 .lista-pedidos {
     background-color: #fff5e1;

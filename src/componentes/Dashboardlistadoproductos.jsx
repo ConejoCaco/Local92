@@ -80,7 +80,7 @@ export default function Dashboardlistadoproductos({ tipo }) {
           }} />
         </div>
         <div className='d-flex justify-content-between mb-3'>
-          <span className='col-4 title1'>Nombre</span>
+          <span className='col-4 title'>Nombre</span>
           {tipo === 'Stock' && <span className='col-2 title'>Precio</span>}
           {tipo === 'Stock' && <span className='col-2 title'>Stock</span>}
           {tipo === 'Pedidos' && <span className='col-2 title'>Rut</span>}
@@ -90,6 +90,7 @@ export default function Dashboardlistadoproductos({ tipo }) {
         <div className='lista-pedidos'>
           {items.map(renderItem)}
         </div>
+    
       </div>
     </div>
   );
